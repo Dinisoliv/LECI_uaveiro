@@ -1,0 +1,69 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/dinis/Desktop/ISD/Quartus/aula7/simulation/qsim
+T_opt
+!s110 1699964961
+V][ObQ9<Dk[dIAm<MzZoRV1
+04 19 4 work MuxDemo_vlg_vec_tst fast 0
+=1-644ed71d7afc-65536820-2db-19a8
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vMuxDemo
+Z3 !s110 1699964960
+!i10b 1
+!s100 URF[Hk?PH:SFDWEGMfT2N3
+ImNd]KUF1PlEmmb94bRmoS3
+R1
+w1699964959
+8MuxDemo.vo
+FMuxDemo.vo
+!i122 10
+L0 32 86
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z6 !s108 1699964960.000000
+!s107 MuxDemo.vo|
+!s90 -work|work|MuxDemo.vo|
+!i113 0
+Z7 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+n@mux@demo
+vMuxDemo_vlg_vec_tst
+R3
+!i10b 1
+!s100 dc=]kO]f34DLWXaRPCY1Y2
+IC0AoDTlB1;AWRD7XkhUgX3
+R1
+w1699964958
+8Waveform3.vwf.vt
+FWaveform3.vwf.vt
+!i122 11
+L0 30 50
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 Waveform3.vwf.vt|
+!s90 -work|work|Waveform3.vwf.vt|
+!i113 0
+R7
+R2
+n@mux@demo_vlg_vec_tst

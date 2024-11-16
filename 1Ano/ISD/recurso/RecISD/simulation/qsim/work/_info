@@ -1,0 +1,117 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+!s11e vcom 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/dinis/Desktop/RecISD/simulation/qsim
+T_opt
+!s110 1706198340
+VPFECOdg93A509iSC3Rn590
+04 21 14 work problema1_vhd_vec_tst problema1_arch 1
+=1-644ed71d7afc-65b28544-56-4708
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim +acc
+tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+Eproblema1
+Z2 w1706198338
+Z3 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z4 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 gn]m8U<PzXZH32IDQ4:hj3
+Z5 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z8 DPx10 cycloneive 21 cycloneive_components 0 22 cSe5`^NYM;IRV3WNS^Q7a2
+!i122 20
+R1
+Z9 8Problema1Proj.vho
+Z10 FProblema1Proj.vho
+l0
+L35 1
+V8:MJ<BW]Pm?ISKDP;XXfI1
+!s100 B72`IO0VPi2BFDlz20Vbk2
+Z11 OL;C;2021.2;73
+32
+Z12 !s110 1706198339
+!i10b 1
+Z13 !s108 1706198339.000000
+Z14 !s90 -work|work|Problema1Proj.vho|
+Z15 !s107 Problema1Proj.vho|
+!i113 0
+Z16 o-work work
+Z17 tExplicit 1 CvgOpt 0
+Astructure
+R3
+R4
+R5
+R6
+R7
+R8
+DEx4 work 9 problema1 0 22 8:MJ<BW]Pm?ISKDP;XXfI1
+!i122 20
+l75
+L44 229
+VYPCE8E`DM>8n3S71F658z2
+!s100 ZO_OSIN_S36KnH0_US9iT3
+R11
+32
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 0
+R16
+R17
+Eproblema1_vhd_vec_tst
+Z18 w1706198336
+R6
+R7
+!i122 21
+R1
+Z19 8Waveform.vwf.vht
+Z20 FWaveform.vwf.vht
+l0
+L32 1
+V>iczR0n0f7P0Sjj<Vm0lH3
+!s100 ^e@[LVMQGKCbDRThE>dLU0
+R11
+32
+R12
+!i10b 1
+R13
+Z21 !s90 -work|work|Waveform.vwf.vht|
+Z22 !s107 Waveform.vwf.vht|
+!i113 0
+R16
+R17
+Aproblema1_arch
+R6
+R7
+DEx4 work 21 problema1_vhd_vec_tst 0 22 >iczR0n0f7P0Sjj<Vm0lH3
+!i122 21
+l49
+L34 128
+VUlJK5H8C?JNc84k:`ki272
+!s100 n7eH7U;n:T]QEHUbAnYXN3
+R11
+32
+R12
+!i10b 1
+R13
+R21
+R22
+!i113 0
+R16
+R17

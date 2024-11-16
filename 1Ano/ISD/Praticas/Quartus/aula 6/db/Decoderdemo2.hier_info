@@ -1,0 +1,20 @@
+|Decoderdemo2
+pin_name4 <= DecoderDemo:inst.pin_name3
+pin_name3 => DecoderDemo:inst.pin_name2
+pin_name5 <= DecoderDemo:inst.pin_name4
+pin_name6 <= DecoderDemo:inst.pin_name5
+pin_name7 <= DecoderDemo:inst.pin_name6
+pin_name1 => ~NO_FANOUT~
+pin_name2 => ~NO_FANOUT~
+
+
+|Decoderdemo2|DecoderDemo:inst
+pin_name3 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+pin_name1 => gdfx_temp0.IN0
+pin_name2 => gdfx_temp1.IN0
+pin_name7 => gdfx_temp1.IN1
+pin_name4 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+pin_name5 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+pin_name6 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+

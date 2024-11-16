@@ -1,0 +1,279 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+!s11e vcom 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/dinis/Desktop/ProjetosQuartus/BCD_7Seg/simulation/qsim
+T_opt
+!s110 1706098862
+VSHTg53X3b_K^<Ge1dYliV2
+Z2 04 20 13 work bcd_7seg_vhd_vec_tst bcd_7seg_arch 1
+=1-644ed71d7afc-65b100ad-22e-1de8
+Z3 !s124 OEM10U2 
+Z4 o-quiet -auto_acc_if_foreign -work work -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim +acc
+Z5 tCvgOpt 0
+n@_opt
+Z6 OL;O;2021.2;73
+R1
+T_opt1
+!s110 1706099031
+V046N6[S6]m3?C7hGj_EkG1
+R2
+=1-644ed71d7afc-65b10156-208-1eb4
+!s124 OEM10U3 
+o-quiet -sdf -auto_acc_if_foreign -work work -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim -sdfmax BCD_7Seg_vhd_vec_tst/i1=BCD_7SegProj_vhd.sdo -suppress 1948 +acc
+R5
+n@_opt1
+R6
+R1
+T_opt2
+!s110 1706106388
+V8UgP<0c;DIT19m:Rl[b;L0
+04 24 17 work bcd_7segproj_vhd_vec_tst bcd_7segproj_arch 1
+=1-644ed71d7afc-65b11e13-1a6-cec
+R3
+R4
+R5
+n@_opt2
+R6
+Ebcd_7seg
+Z7 w1706099027
+Z8 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z9 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 gn]m8U<PzXZH32IDQ4:hj3
+Z10 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z11 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z12 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z13 DPx10 cycloneive 21 cycloneive_components 0 22 cSe5`^NYM;IRV3WNS^Q7a2
+!i122 8
+R1
+Z14 8BCD_7SegProj.vho
+Z15 FBCD_7SegProj.vho
+l0
+L78 1
+VCJc75kdZKcWMU<YjV`b9k0
+!s100 L=bKFmz2>`iLoXjijBngE2
+Z16 OL;C;2021.2;73
+32
+Z17 !s110 1706099029
+!i10b 1
+Z18 !s108 1706099029.000000
+Z19 !s90 -work|work|BCD_7SegProj.vho|
+Z20 !s107 BCD_7SegProj.vho|
+!i113 0
+Z21 o-work work
+Z22 tExplicit 1 CvgOpt 0
+Astructure
+R8
+R9
+R10
+R11
+R12
+R13
+DEx4 work 8 bcd_7seg 0 22 CJc75kdZKcWMU<YjV`b9k0
+!i122 8
+l152
+L105 417
+V]OgJdE7nk]JjTO>Z^?QFY0
+!s100 ]O5oM_>aY6>8oBZ[E5z_22
+R16
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 0
+R21
+R22
+Ebcd_7seg_vhd_vec_tst
+Z23 w1706099026
+R11
+R12
+!i122 9
+R1
+Z24 8Waveform.vwf.vht
+Z25 FWaveform.vwf.vht
+l0
+Z26 L32 1
+VonJEEmLCnTD38Gan1966U0
+!s100 `Fja0n?NzGKNemTMim=K03
+R16
+32
+R17
+!i10b 1
+R18
+Z27 !s90 -work|work|Waveform.vwf.vht|
+Z28 !s107 Waveform.vwf.vht|
+!i113 0
+R21
+R22
+Abcd_7seg_arch
+R11
+R12
+DEx4 work 20 bcd_7seg_vhd_vec_tst 0 22 onJEEmLCnTD38Gan1966U0
+!i122 9
+l51
+L34 78
+V]BRQgJUGbRgg0P?3oS]YH3
+!s100 Oj=F>5:m3KMHKKJjbO;=N2
+R16
+32
+!s110 1706099030
+!i10b 1
+R18
+R27
+R28
+!i113 0
+R21
+R22
+Ebcd_7segproj
+Z29 w1706106384
+R8
+R9
+R10
+R11
+R12
+R13
+!i122 16
+R1
+R14
+R15
+l0
+Z30 L35 1
+VZ?FiAilKVRZdWC>[Ik[]W2
+!s100 e@:YaoJjHk4D@3BmzU7<90
+R16
+32
+Z31 !s110 1706106386
+!i10b 1
+Z32 !s108 1706106386.000000
+R19
+R20
+!i113 0
+R21
+R22
+Astructure
+R8
+R9
+R10
+R11
+R12
+R13
+DEx4 work 12 bcd_7segproj 0 22 Z?FiAilKVRZdWC>[Ik[]W2
+!i122 16
+l86
+L48 295
+V:7MX3c6E;_hQl:mBoHjKg1
+!s100 ZLB2enEFITECg>kV`Njcd0
+R16
+32
+R31
+!i10b 1
+R32
+R19
+R20
+!i113 0
+R21
+R22
+Ebcd_7segproj_vhd_vec_tst
+Z33 w1706106383
+R11
+R12
+!i122 17
+R1
+R24
+R25
+l0
+R26
+VP<61Z0SPFK^h]`_H6Z>L51
+!s100 iO0C6B`akI5J9dFSFA4DA3
+R16
+32
+R31
+!i10b 1
+R32
+R27
+R28
+!i113 0
+R21
+R22
+Abcd_7segproj_arch
+R11
+R12
+DEx4 work 24 bcd_7segproj_vhd_vec_tst 0 22 P<61Z0SPFK^h]`_H6Z>L51
+!i122 17
+l57
+L34 83
+VU]dAd]1JFHTgDneH=2Zo00
+!s100 F42^`n5hg6YejAa4d_Gil2
+R16
+32
+R31
+!i10b 1
+R32
+R27
+R28
+!i113 0
+R21
+R22
+Ehard_block
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+!i122 8
+R1
+R14
+R15
+l0
+R30
+VB]0;STalBkCB1_B4BXQDW2
+!s100 >mXi5[`cD`bFC`UBKA<om3
+R16
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 0
+R21
+R22
+Astructure
+R8
+R9
+R10
+R11
+R12
+R13
+DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
+!i122 8
+l65
+L51 20
+Via>5o7W??azG@W@@eFOTF0
+!s100 [5;Wd8QGQ>@2NGoJ1I]Y43
+R16
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 0
+R21
+R22

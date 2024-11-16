@@ -1,0 +1,111 @@
+$comment
+	File created using the following command:
+		vcd file Pratico_Dinis.msim.vcd -direction
+$end
+$date
+	Tue Nov 28 12:22:57 2023
+$end
+$version
+	Questa Intel Starter FPGA Edition Version 2021.2
+$end
+$timescale
+	1ps
+$end
+
+$scope module Exercicio4_vlg_vec_tst $end
+$var reg 1 ! A $end
+$var reg 1 " B $end
+$var reg 1 # C $end
+$var reg 1 $ D $end
+$var wire 1 % Out $end
+
+$scope module i1 $end
+$var wire 1 & gnd $end
+$var wire 1 ' vcc $end
+$var wire 1 ( unknown $end
+$var tri1 1 ) devclrn $end
+$var tri1 1 * devpor $end
+$var tri1 1 + devoe $end
+$var wire 1 , Out~output_o $end
+$var wire 1 - D~input_o $end
+$var wire 1 . B~input_o $end
+$var wire 1 / A~input_o $end
+$var wire 1 0 C~input_o $end
+$var wire 1 1 inst|inst1~0_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+0$
+1%
+0&
+1'
+x(
+1)
+1*
+1+
+1,
+0-
+0.
+0/
+00
+11
+$end
+#100000
+1$
+1-
+01
+0,
+0%
+#200000
+1#
+0$
+10
+0-
+11
+1,
+1%
+#300000
+1$
+1-
+#400000
+1"
+0#
+0$
+1.
+00
+0-
+#500000
+1$
+1-
+#600000
+1#
+0$
+10
+0-
+01
+0,
+0%
+#700000
+1$
+1-
+#800000
+1!
+0"
+0#
+0$
+1/
+0.
+00
+0-
+#900000
+1$
+1-
+11
+1,
+1%
+#1000000

@@ -1,0 +1,8 @@
+|MuxDemo
+Y <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+I1 => inst1.IN0
+S => inst1.IN1
+S => inst4.IN0
+I0 => inst.IN0
+
+

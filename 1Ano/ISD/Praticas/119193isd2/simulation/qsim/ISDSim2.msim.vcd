@@ -1,0 +1,258 @@
+$comment
+	File created using the following command:
+		vcd file ISDSim2.msim.vcd -direction
+$end
+$date
+	Tue Dec 19 12:22:00 2023
+$end
+$version
+	Questa Intel Starter FPGA Edition Version 2021.2
+$end
+$timescale
+	1ps
+$end
+
+$scope module MEF_vlg_vec_tst $end
+$var reg 1 ! CLK $end
+$var reg 1 " RESET_L $end
+$var reg 1 # X $end
+$var wire 1 $ Q0 $end
+$var wire 1 % Q1 $end
+
+$scope module i1 $end
+$var wire 1 & gnd $end
+$var wire 1 ' vcc $end
+$var wire 1 ( unknown $end
+$var tri1 1 ) devclrn $end
+$var tri1 1 * devpor $end
+$var tri1 1 + devoe $end
+$var wire 1 , RESET_L~input_o $end
+$var wire 1 - Q1~output_o $end
+$var wire 1 . Q0~output_o $end
+$var wire 1 / CLK~input_o $end
+$var wire 1 0 X~input_o $end
+$var wire 1 1 inst8~0_combout $end
+$var wire 1 2 inst1~q $end
+$var wire 1 3 inst4~0_combout $end
+$var wire 1 4 inst~q $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+1"
+1#
+0$
+0%
+0&
+1'
+x(
+1)
+1*
+1+
+1,
+0-
+0.
+0/
+10
+11
+02
+03
+04
+$end
+#40000
+1!
+0"
+1/
+0,
+12
+1.
+13
+1$
+#80000
+0!
+0/
+#120000
+0#
+1!
+00
+1/
+01
+14
+1-
+11
+1%
+#160000
+1"
+0!
+1,
+0/
+#200000
+1!
+1/
+#240000
+1#
+0"
+0!
+10
+0,
+0/
+03
+01
+#280000
+1!
+1/
+04
+02
+0.
+0-
+11
+0%
+0$
+#300000
+0#
+00
+01
+#320000
+0!
+0/
+#360000
+1!
+1/
+#400000
+0!
+0/
+#410000
+1"
+1#
+1,
+10
+11
+#440000
+1!
+1/
+12
+1.
+13
+1$
+#480000
+0!
+0/
+#500000
+0#
+00
+01
+#520000
+1!
+1/
+14
+02
+0.
+1-
+03
+11
+1%
+0$
+#560000
+0!
+0/
+#600000
+1#
+1!
+10
+1/
+13
+01
+04
+12
+1.
+0-
+11
+0%
+1$
+#640000
+0"
+0!
+0,
+0/
+#660000
+0#
+00
+01
+#680000
+1"
+1!
+1,
+1/
+14
+02
+0.
+1-
+03
+11
+1%
+0$
+#720000
+1#
+0"
+0!
+10
+0,
+0/
+13
+01
+#760000
+1!
+1/
+#780000
+0#
+00
+03
+11
+#800000
+1"
+0!
+1,
+0/
+#840000
+0"
+1!
+0,
+1/
+04
+12
+1.
+0-
+13
+01
+0%
+1$
+#880000
+1"
+0!
+1,
+0/
+#920000
+0"
+1!
+0,
+1/
+14
+02
+0.
+1-
+03
+11
+1%
+0$
+#960000
+1#
+1"
+0!
+10
+1,
+0/
+13
+01
+#1000000

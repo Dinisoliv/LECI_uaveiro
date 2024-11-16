@@ -1,0 +1,43 @@
+|Exercicio4
+Out <= MuxDemo_8:inst.Out
+A => MuxDemo_8:inst.S0
+B => MuxDemo_8:inst.S1
+C => MuxDemo_8:inst.S2
+D => MuxDemo_8:inst.I3
+D => inst1.IN0
+D => MuxDemo_8:inst.I5
+
+
+|Exercicio4|MuxDemo_8:inst
+Out <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+I1 => 74153:inst.1C1
+S2 => inst3.IN0
+S2 => 74153:inst.2GN
+I0 => 74153:inst.1C0
+I4 => 74153:inst.2C0
+I6 => 74153:inst.2C2
+I2 => 74153:inst.1C2
+I3 => 74153:inst.1C3
+S1 => 74153:inst.B
+S0 => 74153:inst.A
+I5 => 74153:inst.2C1
+I7 => 74153:inst.2C3
+
+
+|Exercicio4|MuxDemo_8:inst|74153:inst
+1Y <= 9.DB_MAX_OUTPUT_PORT_TYPE
+1GN => 26.IN0
+B => 27.IN0
+A => 29.IN0
+1C0 => 1.IN3
+1C1 => 2.IN3
+1C2 => 3.IN3
+1C3 => 4.IN3
+2Y <= 10.DB_MAX_OUTPUT_PORT_TYPE
+2C0 => 5.IN0
+2GN => 25.IN0
+2C1 => 6.IN0
+2C2 => 7.IN0
+2C3 => 8.IN0
+
+

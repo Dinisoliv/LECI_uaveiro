@@ -1,0 +1,25 @@
+# do EqCmpDemo.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 00:04:36 on Nov 28,2023
+# vlog -work work EqCmpDemo.vo 
+# -- Compiling module EqCmpDemo
+# 
+# Top level modules:
+# 	EqCmpDemo
+# End time: 00:04:36 on Nov 28,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 00:04:36 on Nov 28,2023
+# vlog -work work Waveform1.vwf.vt 
+# -- Compiling module EqCmpDemo_vlg_vec_tst
+# ** Error: (vlog-13069) Waveform1.vwf.vt(33): near "11": syntax error, unexpected INTEGER NUMBER, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: (vlog-13069) Waveform1.vwf.vt(65): near "11": syntax error, unexpected INTEGER NUMBER.
+# ** Error: (vlog-13069) Waveform1.vwf.vt(71): near "12": syntax error, unexpected INTEGER NUMBER.
+# ** Error: (vlog-13069) Waveform1.vwf.vt(77): near "13": syntax error, unexpected INTEGER NUMBER.
+# ** Error: (vlog-13069) Waveform1.vwf.vt(83): near "14": syntax error, unexpected INTEGER NUMBER.
+# End time: 00:04:37 on Nov 28,2023, Elapsed time: 0:00:01
+# Errors: 5, Warnings: 0
+# ** Error: c:/intelfpga_lite/22.1std/questa_fse/win64/vlog failed.
+# Executing ONERROR command at macro ./EqCmpDemo.do line 4

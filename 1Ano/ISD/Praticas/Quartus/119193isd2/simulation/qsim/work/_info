@@ -1,0 +1,116 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/dinis/Desktop/119193isd2/simulation/qsim
+T_opt
+Z2 !s110 1702988517
+V37>_Qogf:MMVmjIOT[]zz3
+04 15 4 work MEF_vlg_vec_tst fast 0
+=1-644ed71d7afc-65818ae5-1ca-6c9c
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver +acc
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+R1
+vMEF
+R2
+!i10b 1
+!s100 81GfR2PK;Jd6]KgD^EDNU0
+I:ScZCFZHm<C1b`YXSaP?01
+R1
+w1702988516
+Z4 8ISDSim2.vo
+Z5 FISDSim2.vo
+!i122 4
+L0 32 158
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z8 !s108 1702988517.000000
+Z9 !s107 ISDSim2.vo|
+Z10 !s90 -work|work|ISDSim2.vo|
+!i113 0
+Z11 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+n@m@e@f
+vMEF_vlg_vec_tst
+R2
+!i10b 1
+!s100 hbUKQ=VK2<0X>=Nfm;FDW1
+I0NDan?HzBd9lkVc^JM>RZ1
+R1
+w1702988515
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+!i122 5
+L0 30 70
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 0
+R11
+R3
+n@m@e@f_vlg_vec_tst
+vSpecialCount
+Z12 !s110 1702989269
+!i10b 1
+!s100 kbG8XN4Fm<f6=mJ0>bI8;0
+I8NohjHIoE?ZfZ62z>Hf]m0
+R1
+Z13 w1702989267
+R4
+R5
+!i122 6
+L0 32 90
+R6
+R7
+r1
+!s85 0
+31
+Z14 !s108 1702989269.000000
+R9
+R10
+!i113 0
+R11
+R3
+n@special@count
+vSpecialCount_vlg_vec_tst
+R12
+!i10b 1
+!s100 ?DOUXTD:o9Ez_2KNRi[Ic1
+I_DZUKHAFD`ZY1=KTDG:=F1
+R1
+R13
+8Waveform2.vwf.vt
+FWaveform2.vwf.vt
+!i122 7
+L0 30 31
+R6
+R7
+r1
+!s85 0
+31
+R14
+!s107 Waveform2.vwf.vt|
+!s90 -work|work|Waveform2.vwf.vt|
+!i113 0
+R11
+R3
+n@special@count_vlg_vec_tst

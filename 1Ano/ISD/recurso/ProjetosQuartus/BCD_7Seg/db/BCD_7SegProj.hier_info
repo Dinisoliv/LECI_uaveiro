@@ -1,0 +1,46 @@
+|BCD_7SegProj
+a <= inst.DB_MAX_OUTPUT_PORT_TYPE
+B[0] => BCD_7Seg:inst8.B0
+B[1] => BCD_7Seg:inst8.B1
+B[2] => BCD_7Seg:inst8.B2
+B[3] => BCD_7Seg:inst8.B3
+c <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+d <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+e <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+f <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+g <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+min <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|BCD_7SegProj|BCD_7Seg:inst8
+Y0 <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+B3 => inst15.IN0
+B3 => inst7.IN0
+B3 => inst16.IN0
+B2 => inst14.IN0
+B2 => inst3.IN1
+B2 => inst4.IN1
+B2 => inst5.IN1
+B2 => inst6.IN1
+B1 => inst12.IN0
+B1 => inst1.IN2
+B1 => inst2.IN2
+B1 => inst5.IN2
+B1 => inst6.IN2
+B0 => inst13.IN0
+B0 => inst.IN3
+B0 => inst2.IN3
+B0 => inst4.IN3
+B0 => inst6.IN3
+B0 => inst16.IN3
+Y1 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Y2 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+Y3 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+Y4 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+Y5 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+Y6 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+Y7 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+Y8 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+Y9 <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+
+
