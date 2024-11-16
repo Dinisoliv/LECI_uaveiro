@@ -1,0 +1,3 @@
+To correctly initialize the file P2G11.py, the file path of the document categories needs to be changed to the correct one (line 5).
+
+Thank you.

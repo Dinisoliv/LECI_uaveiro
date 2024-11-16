@@ -1,0 +1,6 @@
+Sequential search requires N comparasions for 
+a list with lenght N
+
+Binary search reduces the number of comparasions
+when the list is sorted (its faster)
+	If N < 2^k there are k comparasions

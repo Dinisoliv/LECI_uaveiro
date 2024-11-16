@@ -1,0 +1,36 @@
+Académica,Portugal,1238,1322:
+Arouca,Portugal,845,1367:
+Beira-Mar,Portugal,1027,1343:
+Belenenses,Portugal,908,1358:
+Benfica,Portugal,19,1797:
+Boavista,Portugal,458,1444:
+Boavista,Portugal,458,1444:
+Braga,Portugal,75,1655:
+CD das Aves,Portugal,1864,1266:
+CD Santa Clara,Portugal,400,1460:
+Chaves,Portugal,721,1389:
+CS Marítimo Madeira,Portugal,564,1421:
+Estoril,Portugal,632,1406:
+FC Famalicão,Portugal,492,1436:
+FC Famalicão,Portugal,492,1436:
+FC Porto,Portugal,14,1831:
+FC Vizela,Portugal,625,1407:
+Feirense,Portugal,1518,1294:
+Gil Vicente FC,Portugal,262,1517:
+Leixões,Portugal,1269,1318:
+Moreirense,Portugal,752,1384:
+Nacional,Portugal,1847,1268:
+Naval 1º de Maio,Portugal,1090,1337:
+Olhanense,Portugal,1158,1329:
+Paços de Ferreira,Portugal,442,1448:
+Penafiel,Portugal,1479,1298:
+Portimonense,Portugal,745,1385:
+Rio Ave,Portugal,464,1443:
+Rio Ave,Portugal,464,1443:
+SC Farense,Portugal,731,1387:
+Sporting,Portugal,20,1797:
+Tondela,Portugal,951,1353:
+Uniao da Madeira,Portugal,976,1350:
+União de Leiria,Portugal,1598,1288:
+Vitória Guimarães,Portugal,361,1471:
+Vitória Setúbal,Portugal,815,1371:

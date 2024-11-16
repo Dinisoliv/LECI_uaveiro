@@ -1,0 +1,33 @@
+1º de Agosto,Angola,268,1513
+1º de Maio,Angola,2525,1218
+Académica do Soyo,Angola,1768,1272
+Académica Lobito,Angola,2089,1250
+Atlético do Namibe,Angola,2191,1245
+Atletico Petro Luanda,Angola,331,1482
+Atlético Sport Aviação,Angola,1866,1266
+Benfica Luanda,Angola,981,1349
+C.D. Lunda Sul,Angola,2101,1250
+Cabinda,Angola,1941,1260
+Desportivo Da Huíla,Angola,1441,1300
+Domant FC,Angola,2471,1223
+FC Bravos DO Maquis,Angola,1143,1330
+Ferroviário Do Huambo,Angola,2335,1235
+GD Baixa de Kassanje,Angola,2246,1242
+Interclube de Angola,Angola,730,1388
+Kabuscorp SCP,Angola,739,1386
+Nacional de Benguela,Angola,2405,1230
+PA Sambizanga,Angola,2218,1243
+Porcelana FC,Angola,2481,1222
+Progresso Associação do Sambizanga,Angola,1929,1261
+Progresso da Lunda Sul,Angola,1735,1276
+Recreativo da Caála,Angola,1020,1344
+Recreativo do Libolo,Angola,676,1396
+Sagrada Esperança,Angola,867,1365
+Santa Rita de Cássia FC,Angola,2451,1225
+Santos de Angola,Angola,2228,1243
+Saurimo FC,Angola,2313,1236
+Sport Lubango e Benfica,Angola,2521,1218
+Sporting Clube de Benguela,Angola,2635,1201
+Sporting de Cabinda,Angola,2572,1212
+Uniao Sport Clube do Uige,Angola,2138,1248
+Wiliete SC,Angola,1733,1276
