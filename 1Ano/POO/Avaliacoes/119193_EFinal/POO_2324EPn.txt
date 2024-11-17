@@ -1,0 +1,127 @@
+
+Alínea 1) ----------------------------------
+
+### There is already an event occurring at this place and time!
+** No more tickets available for event 1000
+** No more tickets available for event 1001
+** No more tickets available for event 1002
+** No more tickets available for event 1003
+** No more tickets available for event 1004
+** No more tickets available for event 1005
+** No more tickets available for event 1006
+** No more tickets available for event 1007
+** No more tickets available for event 1008
+** No more tickets available for event 1009
+** No more tickets available for event 1010
+** No more tickets available for event 1011
+** No more tickets available for event 1000
+** No more tickets available for event 1001
+** No more tickets available for event 1002
+** No more tickets available for event 1003
+** No more tickets available for event 1004
+** No more tickets available for event 1005
+** No more tickets available for event 1006
+** No more tickets available for event 1007
+** No more tickets available for event 1008
+** No more tickets available for event 1009
+** No more tickets available for event 1010
+** No more tickets available for event 1011
+** No more tickets available for event 1000
+** No more tickets available for event 1001
+** No more tickets available for event 1002
+** No more tickets available for event 1003
+** No more tickets available for event 1004
+** No more tickets available for event 1005
+** No more tickets available for event 1006
+** No more tickets available for event 1007
+** No more tickets available for event 1008
+** No more tickets available for event 1009
+** No more tickets available for event 1010
+** No more tickets available for event 1011
+** No more tickets available for event 1000
+** No more tickets available for event 1001
+** No more tickets available for event 1002
+** No more tickets available for event 1003
+** No more tickets available for event 1004
+** No more tickets available for event 1005
+** No more tickets available for event 1006
+** No more tickets available for event 1007
+** No more tickets available for event 1008
+** No more tickets available for event 1009
+** No more tickets available for event 1010
+** No more tickets available for event 1011
+** No more tickets available for event 1000
+** No more tickets available for event 1001
+** No more tickets available for event 1002
+** No more tickets available for event 1003
+** No more tickets available for event 1004
+** No more tickets available for event 1005
+** No more tickets available for event 1006
+** No more tickets available for event 1007
+** No more tickets available for event 1008
+** No more tickets available for event 1009
+** No more tickets available for event 1010
+** No more tickets available for event 1011
+** No more tickets available for event 1000
+** No more tickets available for event 1001
+** No more tickets available for event 1002
+** No more tickets available for event 1003
+** No more tickets available for event 1004
+** No more tickets available for event 1005
+** No more tickets available for event 1006
+** No more tickets available for event 1007
+** No more tickets available for event 1008
+** No more tickets available for event 1009
+** No more tickets available for event 1010
+** No more tickets available for event 1011
+** No more tickets available for event 1000
+** No more tickets available for event 1001
+** No more tickets available for event 1002
+** No more tickets available for event 1003
+** No more tickets available for event 1004
+** No more tickets available for event 1005
+** No more tickets available for event 1006
+** No more tickets available for event 1007
+** No more tickets available for event 1008
+** No more tickets available for event 1009
+** No more tickets available for event 1010
+** No more tickets available for event 1011
+** No more tickets available for event 1000
+** No more tickets available for event 1001
+** No more tickets available for event 1002
+** No more tickets available for event 1003
+** No more tickets available for event 1004
+** No more tickets available for event 1005
+** No more tickets available for event 1006
+** No more tickets available for event 1007
+** No more tickets available for event 1008
+** No more tickets available for event 1009
+** No more tickets available for event 1010
+** No more tickets available for event 1011
+** No more tickets available for event 1000
+** No more tickets available for event 1001
+** No more tickets available for event 1002
+** No more tickets available for event 1003
+APFinal.EventOccurrence@da93e5f0
+APFinal.EventOccurrence@24a35492
+APFinal.EventOccurrence@2b107f2c
+APFinal.EventOccurrence@9d7a033b
+APFinal.EventOccurrence@d87d089c
+APFinal.EventOccurrence@f709ee56
+APFinal.EventOccurrence@2b107f4b
+APFinal.EventOccurrence@e10432ff
+APFinal.EventOccurrence@99548490
+APFinal.EventOccurrence@3e9adc55
+APFinal.EventOccurrence@fd7338f0
+APFinal.EventOccurrence@e512b11b
+
+
+Alínea 2) ----------------------------------
+
+
+Finished reading file.
+
+
+** First 10 available events, sorted by date:
+
+** Number of tickets sold by event type:
