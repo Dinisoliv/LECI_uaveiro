@@ -1,0 +1,21 @@
+
+Exercício 1) ----------------------------------
+
+Cultura com Sabores, 120€/pessoa, em Automóvel: Museu do Azulejo -> Restaurante Sol Nascente, Oriental -> Museu de Arte Moderna -> Sé -> Restaurante Green Taste, Vegetariana
+
+Encantos da Serra, 100€/pessoa, em Automóvel: Convento de Tomar -> Restaurante Petiscos da Serra, Mediterrânea -> Museu Fóssil Mira de Aire
+
+Anoitecer 4x4, 150€/pessoa, em Todo Terreno: Cromeleque dos Almendres -> Anta da Cerqueira -> Dolmen da Aliviada -> Restaurante Bom Prato, Mediterrânea
+
+
+
+AGÊNCIA:
+Agência Cultural Olhos e Barriga: 3 percursos disponíveis
+TOTAL DE SITIOS CULTURAIS DISPONÍVEIS PARA VISITAR: 0
+
+  * Anoitecer 4x4, 150€/pessoa, em Todo Terreno: Cromeleque dos Almendres -> Anta da Cerqueira -> Dolmen da Aliviada -> Restaurante Bom Prato, Mediterrânea
+
+  * Encantos da Serra, 100€/pessoa, em Automóvel: Convento de Tomar -> Restaurante Petiscos da Serra, Mediterrânea -> Museu Fóssil Mira de Aire
+
+  * Cultura com Sabores, 120€/pessoa, em Automóvel: Museu do Azulejo -> Restaurante Sol Nascente, Oriental -> Museu de Arte Moderna -> Sé -> Restaurante Green Taste, Vegetariana
+
