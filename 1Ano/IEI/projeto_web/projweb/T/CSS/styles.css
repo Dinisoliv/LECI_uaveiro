@@ -1,0 +1,107 @@
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ua_logo {
+    vertical-align: middle;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.navul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navlink {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+.navlink:hover {
+    color: #FF9900;
+}
+
+/* Toggle Button */
+.toggle-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #555;
+}
+
+/* Introduction Section */
+.intro-section {
+    margin-left: 15%;
+    padding: 100px 0;
+    background-color: #222; /* Black */
+    border-radius: 8px;
+    width: 70%;
+}
+
+.intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #fff; /* White text */
+}
+
+.intro-content h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.intro-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.intro-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.scroll-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FF9900;
+    color: #222;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+    background-color: #FFB266;
+}

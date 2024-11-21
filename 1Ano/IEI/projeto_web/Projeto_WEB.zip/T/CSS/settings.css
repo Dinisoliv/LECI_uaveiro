@@ -1,0 +1,120 @@
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ua_logo {
+    vertical-align: middle;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.navul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navlink {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+.navlink:hover {
+    color: #FF9900;
+}
+
+.settings-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-top: 10px; /* Adjust spacing between button and text */
+}
+
+/* Dark mode styles */
+.dark-background {
+    background-color: #000;
+    color: #fff;
+}
+
+.dark-menu {
+    background-color: #000;
+}
+
+.dark-menu .navul {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Rest of your CSS styles */
+
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.toggle-text {
+    font-size: 16px;
+    color: #333; /* Adjust text color */
+}

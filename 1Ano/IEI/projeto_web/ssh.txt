@@ -1,0 +1,3 @@
+209
+ssh-keygen -t ed25519 -C "dinis.aoliveira@ua.pt"
+
