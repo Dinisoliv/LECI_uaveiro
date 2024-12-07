@@ -1,0 +1,548 @@
+-----Aula 1-----
+• O que é um endereço?
+Número que identifica a localização de cada registo de memória.
+
+• O que é o espaço de endereçamento de um processador?
+Gama de endereços. Total de endereços que o CPU consegue referenciar.
+
+• Como se organiza internamente um processador? Quais são os blocos fundamentais da secção de dados? Para que serve a unidade de controlo?
+CPU: datapath (secção de dados) e Unidade de controlo
+datapath: Multiplexers, ALU(Arithmetic Logic Unit: Add, Sub, And, Or) e Registos Internos.
+Control Unit: Geração de sinais de controlo para o datapath para a coordenação dos elementos do datapath e fornecer os recursos necessários ao datapath para as instruções a serem realizadas.
+
+• O que é o conceito "stored-program"?
+Poder residir em memória informação de diferentes tipos, que resulta das instruções serem representadas da mesma forma que números e os programas são armazenados em memória, para serem lidos e escritos, tal como os números, também.
+
+• Como se codifica uma instrução? Que informação fundamental deverá ter o código de uma instrução?
+Uma instrução codifica se na forma de um número binário.
+Deve estar contida a informação de que operação realizar, a localização dos operandos (se existir), onde colocar o resultado e a próxima instrução a realizar.
+
+• O que é o ISA?
+Instruction Set Archirecture corresponde a uma descrição para o programador (de assembly) do modo de programação de um dado processador, descrevendo a funcionalidade de cada instrução fornecida ao software.
+
+• Quais são as classes de instruções que agrupam as instruções de uma arquitetura?
+Processamento: Operações aritmétricas e lógicas
+Tranferência de informação: Cópias entre registos e memória
+Controlo de fluxo e execução: Alterações a sequência de execução
+
+
+-----Aula 2-----
+
+• O que caracteriza as arquiteturas "register-memory" e "load-tore"? De que tipo é a arquitetura MIPS?
+Na arquitetura "register-memory" os operandos das instruções residem em registos internos do CPU ou em memória.
+Na arquitetura "load-store" os operandos apenas residem em registos internos do CPU.
+A arquitetura MIPS é "load-store.
+
+• Com quantos bits são codificadas as instruções no MIPS? Quantos registos internos tem o MIPS? O que diferencia o registo $0 dos restantes? Qual o número do registo interno do MIPS a que corresponde o registo $ra?
+Intruções no MIPS têm 32 bits (dimensão fixa).
+O MIPS tem 32 registos internos (de 32 bits).
+O registos $0 tem sempre o valor 0 e apenas pode ser lido.
+O nome virtual $ra corresponde ao registo $31.
+
+• Quais os campos em que se divide o formato de codificação R? Qual o significado 
+de cada um desses campos? Qual o valor do campo opCode nesse formato?
+Campos da instrução (formato de codificação R):
+opcode (op - 6 bits), Endereço do registo do 1o/20 operando (rs/rt - 5 bits), endereço do registo onde estará o resultado (rd - 5 bits), shift amount (shamt - 5 bits) e código da operação (funct - 6 bits).
+opcode é 0 nas instruções do tipo R.
+
+• O que faz a instrução cujo código máquina é: 0x00000000?
+Shift logico à esquerda de 0 bits do registo $0.
+Ou seja, não acontece nada.
+
+• O símbolo >> da linguagem C significa deslocamento à direita e é traduzido por SRL ou SRA (no caso do MIPS). Quando é que usado SRL e quando é que é usado SRA?
+SRL é usado quando é pretendido fazer shift lógico e SRA quando é aritmético (ambos shifts à direita).
+
+• Qual a instrução nativa do MIPS em que é traduzida a instrução virtual "move $4, $15"?
+or $4, $15, $0
+
+• Determine o código máquina das seguintes instruções:
+xor $5,$13,$24 - sub $30,$14,8 - sll $3,$9,7 - sra $18,$9,8
+000000 00101 01101 11000 00000 100110 
+000000 11110 01110 01000 00000 100010
+000000 00000 01001 00011 00111 000000
+000000 00000 01001 10010 01000 000011
+
+• Traduza para instruções assembly do MIPS a seguinte expressão aritmética, supondo x e y inteiros e residentes em $t2 e $t5, respetivamente (apenas pode usar instruções nativas e não deverá usar a instrução de multiplicação): y = -3 * x + 5;
+sub $t0, $0, $t2    #$t0 = -x
+sub $t0, $t0, $t2   #$t0 = -2x
+sub $t0, $t0, $t2   #$t0 = -3x
+
+addi $t5, $t0, 5 
+
+
+• Traduza para instruções assembly do MIPS o seguinte trecho de código:
+int a, b, c; //a:$t0, b:$t1, c:$t2
+unsigned int x, y, z; //x:$a0, y:$a1, z:$a2
+z = x >> 2 + y;
+c = a >> 5 – 2 * b;
+addi $t3, $a1, 2
+srl $a2, $a0, $t3
+sll $t4, $t1, 1
+li $t5, 5
+sub $t4, $t5, $t4
+srlv $t2, $t0, $t4
+
+-----Aula 3/4-----
+
+• Qual a função da instrução "slt"?
+slt Rdst, Rsrc1, Rsrc2
+Se o conteúdo do Rsrc1 for menor que Rsrc2, o Rdst toma o valor de 1, caso contrário fica a 0.
+
+• Qual o valor armazenado no registo $1 na execução da instrução "slt $1, $3, $7", admitindo que: 
+    a) $3=5 e $7=23 
+    $1 = 1;
+    b) $3=0xFE e $7=0x913D45FC
+    $1 = 0; ($7 tem valor negativo)
+
+• Com que registo comparam as instruções "bltz", "blez", "bgtz" e "bgez"?
+$0
+
+• Decomponha em instruções nativas do MIPS as seguintes instruções virtuais:
+	 blt $15,$3,exit
+		slt $AT, $15, $3
+		bne $AT, $0, exit
+	 ble $6, $9,exit
+		slt $AT, $9, $6
+		beq $AT, $0, exit
+	 bgt $5, 0xA3,exit
+		addi $AT, $0, 0xA3
+		slt $AT, $AT, $5
+		bne $AT, $0, exit
+	 bge $10,0x57,exit
+		slti $AT, $10, 0x57
+		beq $AT, $0, exit
+	 blt $19,0x39,exit
+		slti $AT, $19, 0x39
+		bne $AT, $0, exit
+	 ble $23,0x16,exit
+		addi $AT, $0,0x16
+		slt $AT, $AT, $23
+		beq $AT, $0, exit
+
+• Traduza para assembly do MIPS os seguintes trechos de código de linguagem C (admita que a, b e c residem nos registos $4, $7 e $13, respetivamente):
+1) if(a > b && b != 0)
+		c = b << 2;
+	else
+		c = (a & b) ^ (a | b);
+		
+	bne $7, $0, else
+	slt $2, $7, $4	#b < a -> $2 = 1
+	beq $2, $0, else
+	
+	sll $13, $7, 2
+	
+	j endif
+	
+else:
+	and $3, $4, $7 
+	or  $5, $4, $7
+	xor $13, $3, $5
+	
+endif:
+	
+	jr $ra
+	
+2) if(a > 3 || b <= c)
+		c = c – (a + b);
+	else
+		c = c + (a – 5);
+		
+	bgt $4, 3, if	#addi $AT, $0, 3
+					#slti $AT, $AT, $4
+					#bne  $AT, $0, if
+	ble $7, $13, if	#slt $AT, $13, $7
+					#beq $AT, $0, if
+	
+	ori $3, $0, 5
+	
+	sub $3, $4, $3
+	add $13, $13, $3
+	
+	j endif
+	
+if:	
+	add $2, $4, $7
+	sub $13, $13, $2
+	
+endif:
+	jr $ra
+	
+	
+• Na tradução para assembly, que diferenças encontra entre um ciclo do tipo "while(…){…}" e um do tipo "do{…}while(…);"
+O teste condicional é realizado no final do ciclo, logo o corpo do ciclo é executado pelo menos uma vez.
+
+• Traduza para assembly do MIPS os seguintes trechos de código de linguagem C (atribua registos internos para o armazenamento das variáveis i e k ) :
+1) 	int i, k;
+	for(i=5, k=0; i < 20; i++, k+=5);
+	
+		li $2, 5
+		li $3, 0
+
+while:	
+		bge $2, 20, endw
+		
+		addi $2, $2, 1
+		addi $3, $3, 5
+		
+		j while
+
+endw:
+		jr $ra
+	
+2) 	int i=100, k=0;
+	for( ; i >= 0; ){
+	i--;
+	k -= 2;
+	}
+	
+		ori $2, $0, 100
+		ori $3, $0, 0
+	
+for: 	
+		slt $4, $2, $0
+		beq $4, $0, endf
+		
+		addi $2, $2, -1 
+		addi $3, $3, -2
+		
+		j for
+
+endf:	
+		jr $ra
+	
+3) 	unsigned int k=0;
+	for( ; ; ){
+	k += 10;
+	}
+	
+	li $2, 0
+	
+while:	
+		addi $2, $2, 10
+		
+		j while
+		
+		jr $ra
+
+4) 	int k=0, i=100;
+	do{
+	k += 5;
+	} while(--i >= 0);
+	
+do:
+	ori $2, $0, 0
+	ori $3, $0, 100
+	
+	addi $2, $2, 5
+	addi $3, $3, -1
+	
+	bge $3, $0, do
+	
+	jr $ra
+	
+-----Aula 5/6-----
+	
+• Qual o modo de endereçamento usado pelo MIPS para acesso a quantidades residentes na memória externa?
+Endereçamento tipo registo - endereços dos registos internos são especificados na própria instrução
+Endereçamento indireto por registo - a instrução indica um registo que contém o endereço de memória a aceder
+Endereçamento indireto por registo - a instrução indica um registo que contém o endereço de memória a aceder
+
+• Na instrução "lw $3,0x24($5)" qual a função dos registos $3 e $5 e da constante 0x24?
+$3   - registo interno de destino
+$5   - registo de endereçamento indireto (registo com endereço a aceder na memória externa)
+0x24 - offset
+
+• Qual o formato de codificação das instruções de acesso à memória no MIPS e qual o significado de cada um dos seus campos?
+Formato I
+op (6 bits) : operand code - código da operação a realizar
+rs (5 bits) : source register - registo do endereçamento indireto
+rt (5 bits) : register target - registo interno do cpu onde realizar a operação
+offset(16 bits) : deslocamento para calculo do rs 
+
+• Qual a diferença entre as instrução "sw" e "sb"? O que distingue as instruções "lb" e "lbu"?
+"sw" (Store word) transfere uma palavra de 32 bits de um registo interno para memória e na instrução "sb" (Store byte) são apenas 8 bits
+"lb" intrepeta o byte como unsigned (colocando os restantes 24 bits a '0') e "lbu" extende o sinal dos 8 bits para os 32.
+
+• O que acontece quando uma instrução lw/sw acede a um endereço que não é múltiplo de 4?
+O endereço é inválido e é gerada uma exceção, terminando a execução do programa.
+
+• Sabendo que o opcode da instrução "lw" é 0x23, determine o código máquina, expresso em hexadecimal, da instrução "lw $3,0x24($5)".
+100011 00101 00011 0000000000100100
+1000 1100 1010 0011 0000 0000 0010 0100
+0x8CA40024
+
+• Suponha que a memória externa foi inicializada, a partir do endereço 0x10010000, com os valores 0x01,0x02,0x03,0x04,0x05,…
+Suponha ainda que $3=0x1001 e $5=0x10010000. 
+Qual o valor armazenado no registo destino após a execução da instrução "lw $3,0x24($5)"?
+0x24 ($3)
+
+• Nas condições anteriores qual o valor armazenado no registo destino pelas instruções: "lbu $3,0xA3($5)" e "lb $4,0xA3($5)"?
+$3 : 0x000000A3
+$4 : 0x111111A3
+
+• Quantos bytes são reservados em memória por cada uma das diretivas:
+L1: .asciiz"Aulas5&6T"
+10
+L2: .word 5,8,23
+12
+L3: .byte 5,8,23
+3
+L4: .space 8
+8
+
+• Acrescente a diretiva ".align 2" a seguir a L3. 
+Desenhe esquematicamente a memória e preencha-a com o resultado das diretivas anteriores.
+Endereço de memória reservado de 4 em 4.
+
+• Supondo que "L1" corresponde ao endereço inicial do segmento de dados, e que esse endereço é 0x10010000, 
+determine os endereços a que correspondem os labels "L2", "L3" e "L4", nas condições da questão anterior.
+L1: 0x10010000 -> 0x10010009
+L2: 0x1001000C -> 0x10010017
+L3: 0x10010018 -> 0x1001001A
+L4: 0x1001001B -> 0x10010022
+
+-----Aula 7-----
+• O que significa a declaração "int *ac;"? Qual a diferença entre essa declaração e "int ac"?
+O que significa a declaração "char *ac;"?
+int *ac é um ponteiro para um inteiro - ac armaneza um endereço de memória
+int ac é a declaração de uma variável inteira "normal"
+char *ac é um ponteiro para um valor do tipo char (usado mt para strings)
+
+• A partir das declarações de "a" e "b":
+	int a;
+	int *b;
+identifique quais das seguintes atribuições são válidas:
+	a=b : I 		b=*a : I		b=&(a+1) : I 	a=&b : I		b=&a : V
+	b=*a+1 : I		b=*(a+1) : I	a=*b : V 		a=*(b+1) : V 	a=*b+1 : V
+	
+• Identifique as operações, e respetiva sequência, realizadas nas seguintes instruções C:
+	a=*b++; 	
+	é atribuido a 'a' o valor para qual 'b' está apontado e depois o ponteiro é incrementado 
+	
+	a=*(b)++; 		
+	é atribuido a 'a' o valor para qual 'b' está apontado e depois o ponteiro é incrementado 
+	
+	a=*(++b);
+	o valor do ponteiro de 'b' é incrementado e depois o valor desse novo endereço é atribuido a 'a'
+	
+• Suponha que "p" está declarado como "int *p;".  Supondo que a organização da memória é do tipo "byte-addressable",  
+qual o incremento no endereço que é obtido pela operação "p=p+2;"?
+
+4*2(bytes) = 8 bytes
+
+
+• Suponha que "b" é um array declarado como "int b[25];".
+Como é obtido o endereço inicial do array, i.e., o endereço da sua primeira posição? 
+Supondo uma memória "byteaddressable", como é obtido o endereço do elemento "b[6]"?
+
+Sendo p o endereço inicial do array: int* p = b; ou int* p = &b[0];
+E o endereço de b[6]: int* p = b+6; ou int* p = &b[6]; (incrementando o endereço de memória em 4*6 bytes)
+
+
+• Dada a seguinte sequência de declarações:
+	int b[25];
+	int a;
+	int *p = b;
+	Identifique qual ou quais das seguintes atribuições
+	permitem aceder ao elemento de índice 5 do array "b":
+	a = b[5]; a = *p + 5; a = *(p + 5); a = *(p + 20);
+	
+	a = b[5]; a = *(p + 5);
+	
+• Pretende-se escrever uma função para a troca do conteúdo de duas variáveis (troca(a, b);). Isto é, se, antes da
+chamada à função, a=2 e b=5, então, após a chamada à função, os valores de a e b devem ser: a=5 e b= 2
+	Uma solução incorreta para o problema é a seguinte:
+		void troca(int x, int y)
+		{
+			int aux;
+			aux = x;
+			x = y;
+			y = aux;
+		}
+		
+• Identifique o erro presente no trecho de código e faça as
+necessárias correções para que a função tenha o
+comportamento pretendido
+
+É passada a função uma cópia das variaveis, logo as variaveis não são alteradas,
+Deverá ser uma passagem de argumentos por referência à função:
+		void troca(int* x, int* y)
+		{
+			int aux;
+			aux = *x;
+			*x = *y;
+			*y = aux;
+		}
+		
+
+-----Aula8-----
+• Qual o formato de codificação de cada uma das seguintes instruções: "beq/bne", "j", "jr"?
+"beq/bne" : formato I
+"j"  : formato J
+"jr" : formato R
+
+• O que é codificado no campo offset do código máquina das instruções "beq/bne" ?
+O campo de offset codifica a diferença entre o valor endereço alvo e o valor do endereço seguinte à instrução de branch.
+
+• A partir do código máquina de uma instrução "beq/bne", como é formado o endereço-alvo (Branch Target Address)?
+Target Adress = PC + (offset/4)
+PC - program counter 
+
+• A partir do código máquina de uma instrução "j", como é formado o endereço-alvo (Jump Target Address)?
+26LSbits do código máquina deslocados 2 bits à direita (x4).
+
+• Na instrução "jr $ra", como é obtido o endereço-alvo?
+A instrução "jr" obtem o endereço alvo apartir do conteúdo em $ra.
+
+• Qual o endereço mínimo e máximo para onde uma instrução "j", residente no endereço de memória 0x5A18F34C, pode saltar?
+(?)
+
+• Qual o endereço mínimo e máximo para onde uma instrução "beq", residente no endereço de memória 0x5A18F34C, pode saltar?
+(?)
+
+• Qual o endereço mínimo e máximo para onde uma instrução "jr", residente no endereço de memória 0x5A18F34C pode saltar?
+(?)
+
+• Qual a gama de representação da constante nas instruções aritméticas imediatas?
+16 bits com sinal [-32768, +32767]
+
+• Qual a gama de representação da constante nas instruções lógicas imediatas?
+16 bits sem sinal [0, 65535]
+
+• Porque razão não existe no ISA do MIPS uma instrução que permita manipular diretamente uma constante de 32 bits?
+Porque as instruções são sempre de 32 bits, e uma instrução de incluir outros campos para além da constante.
+
+• Como é que no MIPS se podem manipular constantes de 32 bits?
+A instrução lui permite dar load aos 16 bits mais significativos de uma constante num registo.
+E com um ori os bits menos significativos entram no conteúdo do registo.
+
+• Apresente a decomposição em instruções nativas das seguintes instruções virtuais:
+	li $6,0x8B47BE0F :
+	lui $6, 0x8B47
+	ori $6, $6, 0xBE07
+	
+	xori $3,$4,0x12345678
+	lui $5, 0x1234
+	ori $5, $5, 0x5678
+	xor $3, $4, $5
+	
+	addi $5,$2,0xF345AB17
+	lui $3, 0xF345
+	ori $3, $3, 0xAB17
+	add $5, $2, $3
+	
+	beq $7,100,L1
+	ori $8, $0, 100
+	beq $7, $8, L1
+	
+	blt $3,0x123456,L2
+	lui $4, 0x12
+	xori $4, $4, 0x3456
+	blt $3, $4, L2
+	
+-----Aula9/10-----
+
+
+-----Aula11-----
+• Para uma codificação em complemento para 2, apresente a gama de representação que é possível obter com 3, 4, 5, 8 e 16 bits 
+(indique os valores-limite da representação em binário, hexadecimal e em decimal com sinal e módulo).
+3:[-4, 3] ; 4:[-8, 7] ; 5:[-16, 15] ; 8:[-128, 127] ; 16:[-32768, 32767]
+
+• Determine a representação em complemento para 2 com 16 bits das seguintes quantidades:
+5      : 0000 0000 0000 0101
+-3     : 1111 1111 1111 1101
+-128   : 1111 1111 1000 0000
+-32768 : 1000 0000 0000 0000
+31     : 0000 0000 0001 1111
+-8     : 1111 1111 1111 1000
+256    : 0000 0001 0000 0000
+-32	   : 1111 1111 1110 0000
+
+• Determine o valor em decimal representado por cada uma das quantidades seguintes, supondo que estão codificadas em complemento para 2 com 8 bits:
+00101011 : 43
+0xA5     : -87
+10101101 : -83
+0x6B	 : 107
+0xFA	 : -6
+0x80	 : -128
+
+• Determine a representação das quantidades do exercício anterior em hexadecimal com 16 bits (também codificadas em complemento para 2).
+00101011 : 0x002B
+0xA5     : 0xFFA5
+10101101 : 0xFFAD
+0x6B	 : 0x006B
+0xFA	 : 0xFFFA
+0x80	 : 0xFF80
+
+• Como é realizada a deteção de overflow em operações de adição com quantidades sem sinal? 
+Sendo A e B os operandos e n o número de bits da representação
+Quando A+B > 2^n -1 ou quando A-B com A<B 
+Ou quando o bit de carry Cn = 1
+
+• E com quantidades com sinal (codificadas em complemento para 2)?
+Quando A+B > 2^(n-1) -1 ou A+B < 2^(n-1)
+Ou (Para R=A+B e bit de carry Cn):
+OVF = ¬Rn-1 . An-1 . Bn-1 + Rn-1 . ¬An-1 . ¬Bn-1 (Sinal do resultado diferente do sinal dos operandos)
+OVF = Cn-1 . ¬Cn + ¬Cn-1 . Cn (Carry in do MsB diferente do Carry Out)
+
+• Para a multiplicação de dois operandos de "m" e "n" bits, respetivamente, qual o número de bits necessário para o armazenamento do resultado?
+m + n
+
+• Apresente a decomposição em instruções nativas da instrução virtual mul $5,$6,$7
+mult $6, $7
+mflo $5
+
+• Determine o resultado da instrução anterior, quando $6=0xFFFFFFFE e $7=0x00000005.
+-2*5 = 10
+0x0000000A
+
+• Apresente a decomposição em instruções nativas das instruções virtuais 
+div $5,$6,$7
+div $6, $7
+mflo $5
+
+rem $5,$6,$7
+div $6, $7
+mfhi $5
+
+• Determine o resultado das instruções anteriores, quando $6=0xFFFFFFF0 e $7=0x00000003
+-16/3
+div = -5 = 0xFFFFFFFB
+rem = -1 = 0xFFFFFFFF
+
+• As duas sub-rotinas do slide seguinte permitem detetar
+overflow nas operações de adição com e sem sinal, no
+MIPS. Analise o código apresentado e determine o resultado
+produzido, pelas duas sub-rotinas, nas seguintes situações:
+
+# Overflow detection, signed
+# int isovf_signed(int a, int b);
+isovf_signed: ori $v0,$0,0
+			  xor $1,$a0,$a1
+			  slt $1,$1,$0
+			  bne $1,$0,notovf_s
+			  addu $1,$a0,$a1
+			  xor $1,$1,$a0
+			  slt $1,$1,$0
+			  beq $1,$0,notovf_s
+			  ori $v0,$0,1
+notovf_s: 	  jr $ra
+
+# Overflow detection, unsigned
+# int isovf_unsigned(unsigned int a, unsigned int b);
+isovf_unsigned: ori $v0,$0,0
+				nor $1,$a1,$0
+				sltu $1,$1,$a0
+				beq $1,$0,notovf_u
+				ori $v0,$0,1
+notovf_u: 		jr $ra
+
+$a0=0x7FFFFFF1, $a1=0x0000000E;
+
+
+$a0=0x7FFFFFF1, $a1=0x0000000F;
+
+$a0=0xFFFFFFF1, $a1=0xFFFFFFFF;
+
+$a0=0x80000000, $a1=0x80000000; 
+
