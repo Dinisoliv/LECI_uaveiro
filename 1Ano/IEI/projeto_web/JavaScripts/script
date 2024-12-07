@@ -1,0 +1,7 @@
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark-background');
+
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('dark-menu');
+}
