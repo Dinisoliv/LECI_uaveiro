@@ -1,1 +1,0 @@
-Precisa de conectar ao site go.ua.pt com um VPN ( CheckPointMobile )
