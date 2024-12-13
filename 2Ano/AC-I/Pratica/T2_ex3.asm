@@ -35,13 +35,13 @@ do:
 	
 	l.d $f4, 8($a1)
 	div.d $f6, $f2, $f4
+	cvt.w.d $f6, $f6
 	s.d $f6, 0($a1)
 	
 	addiu $t0, $t0, 1
 	addiu $a1, $a1, 40
 endf:
-	addiu $t3, $a1, 32
-	lw $t4, 0($t3)
+	lw $t4, 32($t3)
 	
 	mtc1 $t4, $f6
 	cvt.d.w $f6, $f6
