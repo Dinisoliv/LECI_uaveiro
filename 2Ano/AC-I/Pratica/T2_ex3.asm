@@ -45,6 +45,6 @@ endf:
 	
 	mtc1 $t4, $f6
 	cvt.d.w $f6, $f6
-	div.d $f0, $f4, $f6 
+	mul.d $f0, $f4, $f6 
 	
 	jr $ra
