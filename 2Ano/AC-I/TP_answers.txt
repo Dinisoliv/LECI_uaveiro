@@ -441,7 +441,104 @@ E com um ori os bits menos significativos entram no conteúdo do registo.
 	blt $3, $4, L2
 	
 -----Aula9/10-----
+• O que é uma sub-rotina? Qual a instrução do MIPS usada para saltar para uma sub-rotina? 
+Porque razão não pode ser usada a instrução "j"?
+Uma sub-rotina é um trecho de código que pode ser chamado em diferentes partes do programa para realizar uma tarefa específica.
+Ou seja, uma função (no contexto de C).
+"jal"(jump and link): instrução para saltar para uma sub-rotina.
+A instrução "jal", no MIPS, armaneza no registo $ra (return address) guarda o atual valor do PC.
 
+• Quais as operações realizadas, e relativa sequência, na execução de uma instrução "jal"? 
+Qual o nome virtual e o número do registo associado à execução dessa instrução?
+O endereço da próxima instrução (PC + 4) é guardado no registo $ra e o PC é a atualizado com especificado na instrução (target address)
+$ra: $31
+
+• No caso de uma sub-rotina ser simultaneamente chamada e chamadora (sub-rotina intermédia) que operações é obrigatório realizar nessa subrotina?
+No inicio, guardar o registo $ra no stack.
+E no fim, restaurar o valor de $ra.
+
+• Qual a instrução usada para retornar de uma sub-rotina? Que operação fundamental é realizada na execução dessa instrução?
+"jr": jump Register
+Atualiza o PC com o valor no registo $ra.
+
+• De acordo com a convenção de utilização de registos no MIPS:
+	• Que registos são usados para passar parâmetros e para devolver resultados de uma sub-rotina?
+	$a0 a $a3 ($4 a $7)
+	$v0 e $v1 ($2 e $3)
+	
+	• Quais os registos que uma sub-rotina pode livremente usar e alterar sem necessidade de prévia salvaguarda?
+	$t0 a $t9 ($8 a $15 e $24 a $25)
+	
+	• Quais os registos que uma sub-rotina tem de preservar? Quais os
+	registos que uma sub-rotina chamadora tem a garantia que a subrotina chamada não altera?
+	$s0 a $s7 ($16 a $23)
+	
+	• Em que situação devem ser usados registos $sn? Em que situação
+	devem ser usados os restantes: $tn, $an e $vn?
+	Perguntas acima
+	
+• O que é a stack? Qual a utilidade do stack pointer?
+A stack (pilha) é uma estrutura de dados em memória usada para armazenar informações temporárias, como endereços de retorno, variáveis locais e valores de registos.
+Funciona como uma estrutura LIFO (Last In, First Out).
+O stack pointer (registo $sp) mantém o endereço do topo da pilha, ajudando na adição (push) e remoção (pop) de dados.
+
+• Como funcionam as operações de push e pop?
+Em uma stack, push adiciona um elemento no topo, e pop remove o elemento do topo, seguindo o princípio LIFO (Last In, First Out).
+
+• Porque razão a stack cresce tipicamente no sentido dos endereços
+mais baixos?
+A convenção de crescimento para endereços mais baixos evita colisões com o segmento de heap, 
+que normalmente cresce em direção a endereços mais altos. Isso permite que a memória seja usada de forma eficiente.
+
+• Quais as regras para a implementação em software de uma stack no
+MIPS? Qual o registo usado como stack pointer?
+stack pointer a apontar para o topo da pilha, ajustar o valor do ponteiro nas operações na stack
+$sp: $29
+
+• De acordo com a convenção de utilização de registos do MIPS:
+
+	• Que registos devem preferencialmente ser usados numa sub-rotina
+	intermédia, para armazenar variáveis cujo tempo de vida inclui a chamada
+	de sub-rotinas? Que cuidados se deve ter na utilização desses registos?
+
+	• Que registos devem preferencialmente ser usados numa sub-rotina
+	intermédia, para armazenar variáveis cujo tempo de vida não inclui a
+	chamada de sub-rotinas?
+
+	• Que registos devem preferencialmente ser usados numa sub-rotina
+	terminal para armazenar variáveis?
+
+---To Do---
+
+• Para a função com o protótipo seguinte, indique, para cada um dos
+parâmetros de entrada e para o valor devolvido, qual o registo do
+MIPS usado para a passagem dos respetivos valores:
+char fun(int a,unsigned char b,char *c,int *d)
+Parametros de entrada:
+int a: $a0 ($4).
+unsigned char b: $a1 ($5).
+char *c: $a2 ($6).
+int *d: $a3 ($7).
+
+Valor devolvido:
+char: $v0 ($2).
+
+• Traduza para assembly do MIPS a seguinte função fun1(),
+aplicando a convenção de passagem de parâmetros e
+salvaguarda de registos:
+char *fun2(char *, char);
+char *fun1(int n, char *a1, char *a2)
+{
+	int j = 0;
+	char *p = a1;
+	do
+	{
+		if((j % 2) == 0)
+			fun2(a1++, *a2++);
+	} while(++j < n);
+	*a1='\0';
+	return p;
+}
 
 -----Aula11-----
 • Para uma codificação em complemento para 2, apresente a gama de representação que é possível obter com 3, 4, 5, 8 e 16 bits 
@@ -510,6 +607,8 @@ mfhi $5
 div = -5 = 0xFFFFFFFB
 rem = -1 = 0xFFFFFFFF
 
+---To Do---
+
 • As duas sub-rotinas do slide seguinte permitem detetar
 overflow nas operações de adição com e sem sinal, no
 MIPS. Analise o código apresentado e determine o resultado
@@ -546,3 +645,173 @@ $a0=0xFFFFFFF1, $a1=0xFFFFFFFF;
 
 $a0=0x80000000, $a1=0x80000000; 
 
+-----Aula14->16-----
+• Quais as diferenças entre uma arquitetura Harvard e uma arquitetura von Neumann?
+Divisão entre memória de Instruções e de Dados. Permite leitura/escrita simultaneamente em ambos as memórias.
+
+• Suponha um sistema baseado numa arquitetura von Neumann, com um barramento de endereços de 20 bits e com uma organização de memória do tipo byte-addressable. 
+Qual a dimensão máxima, em bytes, que os programas a executar neste sistema (instruções+dados+stack) podem ter?
+2^20
+
+• Num processador baseado numa arquitetura Harvard, a memória de instruções está organizada em words de 32 bits, 
+a memória de dados em words de 8 bits (byte-addressable) e os barramentos de endereços respetivos têm uma dimensão de 24 bits. 
+Qual a dimensão, em bytes, dos espaços de endereçamento de instruções e de dados?
+Dados: 2^24 / 2
+Instruções: 2^24
+
+• O que significa um elemento de estado ter escrita síncrona?
+O seu conteúdo/estado, apenas é atualizado na transição ativa do sinal de relógio.
+
+• Considere um elemento de estado, com leitura assíncrona, que apenas tem o sinal de clock, na sua interface de controlo. 
+O que pode concluir-se relativamente à escrita?
+Não existe escrita, espaço de memória apenas para leitura.
+
+• Suponha um elemento de estado, com escrita síncrona e leitura assíncrona, que apresenta, na sua interface de controlo, um sinal
+"read", um sinal "write" e um sinal de clock. Indique que sinal ou sinais têm que estar ativos para que se realize: 
+a) uma operação de leitura: read 
+b) uma operação de escrita: write e transição ativa do sinal de relógio
+
+• Qual a capacidade de armazenamento, expressa em bytes, de uma memória com uma organização interna em words de 32 bits e um barramento de endereços de 30 bits?
+2^30 * 4 (bytes)
+
+• Quais as operações realizadas no datapath que são comuns a todas as instruções?
+Leitura da memória de instruções usando o valor do Program Counter (PC);
+Incrementar o PC + 4;
+(Instruction Fetch)
+Leitura dos registos rs e rt
+
+• Identifique a operação realizada na ALU na realização de cada uma
+das seguintes instruções: tipo 
+R   : Operação aritmética/lógica, especificada no campo funct
+addi: Soma
+slti: Comparação (???) 
+lw  : Soma
+sw  : Soma
+beq : Subtração
+
+• Indique qual a operação realizada na conclusão de cada uma das
+seguintes instruções: tipo R, addi, slti, lw, sw, beq e j.
+R   : Escrita do resultado no registo rd
+addi: Escrita do resultado no registo rt
+slti: Escrita do resultado no registo rt
+lw  : Escrita do valor lido em memória em rt
+sw  : Escrita em memória
+beq : Atualização do PC com o endereço destino (se branch-taken)
+j   : Atualização do PC com o endereço destino
+
+• Suponha que o datapath está a executar a instrução add $3,$4,$5.
+Que operações serão realizadas na próxima transição ativa do sinal de relógio?
+Escrita do resultado em $3 e atualização do PC com PC+4
+
+• No datapath single-cycle que tipo de informação é armazenada na memória cujo endereço é a saída do registo PC?
+A próxima instrução a ser executada.
+
+• Qual o endereço de memória onde deve estar armazenada a primeira instrução do programa 
+para que a execução possa ser reiniciada sempre que se ative o sinal de "reset" do registo PC?
+Mesmo em que ficar o PC após reset (0x00000000)
+
+• Suponha que cada registo do banco de registos foi inicializado com um valor igual a: (32-número do registo). 
+Indique o valor presente nas entradas do banco de registos ReadReg1, ReadReg2 e WriteReg, e o valor presente nas saídas ReadData1 e ReadData2, 
+durante a execução das instruções com o código máquina: 0x00CA9820, 0x8D260018 (lw) e 0xAC6A003C (sw).
+000000 00110 01010 10011 00000 100000
+R - add $19, $5, $10
+ReadReg1 : 5
+ReadReg2 : 10
+WriteReg : 19
+ReadData1: 27 
+ReadData2: 22
+
+100011 01001 00110 000000000001 1000
+lw $6, 24($9)
+ReadReg1 : 9
+ReadReg2 : 6
+WriteReg : 6
+ReadData1: 23
+ReadData2: 26
+
+101011 00011 01010 0000 0000 0011 1100
+sw $12, 60($3)
+ReadReg1 : 12
+ReadReg2 : 3
+WriteReg : X
+ReadData1: 20
+ReadData2: 29
+
+• Considerando ainda a inicialização do banco de registos da questão anterior, 
+indique qual o valor calculado pela ALU durante a execução das instruções LW com o código máquina 
+0x8CA40005
+100011 00101 00100 0000 0000 0000 0101
+lw $4, 5($5) 
+27 + 5 = 32
+
+0x8CE6FFF3
+100011 00111 00110 1111 1111 1111 0011
+lw $6, -13($7)
+25 + (-13) = 12
+
+• Qual o valor à saída do somador de cálculo do BTA durante a execução da instrução cujo código máquina é 0x10430023, supondo que o valor à saída do registo PC é 0x00400034?
+0x10430023
+000100 00010 00011 0000 0000 0010 0011
+0x00400034 + 0x00000023 * 2
+
+
+-----Aula17/18-----
+• De que tipo é a unidade de controlo principal do datapath single-cycle?
+Combinatória
+
+• Como calcularia o tempo mínimo necessário para executar cada uma das instruções anteriormente analisadas?
+Somando os atrasos derivados do caminho critico do circuito.
+Instruction Fetch, leitura de operandos, (se necessário), cálculo na ALU, acesso a memória e escrita num registo.
+
+• O que limita a frequência máxima do relógio do datapath single-cycle?
+O tempo de execução da instrução mais longa 
+
+• Que alterações é necessário fazer ao datapath single-cycle para permitir a execução das instruções: 
+• "bne” – branch not equal 
+Sinal de controlo adicional comparado com o saída zero da ALU
+• "jal" – jump and link
+Multiplexer na entrada Write Data/Register com PC e $ra
+• "jr" – jump register
+Atualização do PC com o valor do registo, mais uma entrada no multiplexer de atualização do PC
+• "nor", "xor" e "sltu“ (todas tipo R)
+Mais operações na ALU, Sinal de seleção da operação com mais um bit.
+
+• Analise o datapath e identifique que instruções deixariam de funcionar
+corretamente se a unidade de controlo bloqueasse o sinal RegWrite a '1'.
+Instruções sem escrita em registo: sw, beq e j
+
+• Repita o exercício anterior para cada uma das seguintes situações:
+RegWrite='0': Instruções com escrita em memória: tipo R, addi, slti, lw
+MemRead='0': Intruções que acedem à memória para leitura: lw
+MemWrite='0': Intruções que acedem à memória para escrita: sw
+ALUop="00": Intruções que não realizam uma subtração na ALU: sw, lw, tipo R s/ sub, slti
+RegDst='1': Intruções que escrevem num registo s/ ser tipo R: lw, addi, slti
+ALUSrc='0': Instruções que usam como 2o operando um imediato: addi, slti, lw, sw
+MemtoReg='0': Instroções que escrevem no registo com um valor da memória: lw
+MemtoReg='1': Instruções que escrevem no registo com o valor cálculado pelo a ALU: slti, addi, tipo R
+
+• Que consequência teria para o funcionamento do datapth o bloqueio do sinal Branch a '1'?
+Com a ALU cálculando um resultado favorável a um branch, o valor cáculado para branch-taken será usado indevidamente, causando fluxo de execução incorreto.
+
+-----Aula19->21-----
+• Considere um programa que executa em 10s num computador "A" com uma frequência de 4GHz. 
+Pretende-se desenvolver um computador "B" que execute o programa em 6s. 
+O hardware designer verificou que é possível um aumento da frequência de trabalho do CPU do computador "B", 
+mas isso acarreta um acréscimo do número total de ciclos de relógio de 1,2 vezes relativamente a A. 
+Qual a frequência de trabalho que deverá ter o CPU da máquina "B"?
+
+
+• Considere duas máquinas com implementações distintas da mesma
+arquitetura do conjunto de instruções (ISA). Para um dado programa,
+• Máquina A: Clock_cycle = 350 ps; CPI = 2,0
+• Máquina B: Clock_cycle = 400 ps; CPI = 1,5
+Qual a máquina mais rápida? Qual a relação de desempenho?
+
+• Considere duas máquinas ("A" e "B") com implementações distintas da
+mesma arquitetura do conjunto de instruções (ISA). Para um mesmo
+programa, a máquina "A" apresenta um CPI de 2,0 e a "B" de 3,125.
+Usando a métrica tempo de execução, verificou-se que a máquina "A"
+é mais rápida que a máquina "B" por um fator de 1,25. Calcule a
+relação entre as frequências de relógio das máquinas "A" e "B".
+
+-----Aula22->26-----
