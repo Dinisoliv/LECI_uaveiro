@@ -517,7 +517,7 @@ Image ImageLoad(const char* filename) {  ///
 /// On success, returns nonzero.
 /// On failure, returns 0, and
 /// a partial and invalid file may be left in the system.
-int ImageSave(const Image img, const char* filename) {  ///
+int ImageSave(const Image img, const char* filename) {  
   assert(img != NULL);
   int w = img->width;
   int h = img->height;
@@ -563,12 +563,11 @@ int ImageHeight(const Image img) {
 
 /// Image comparison
 
-int ImageIsEqual(const Image img1, const Image img2) { //*
+int ImageIsEqual(const Image img1, const Image img2) { 
   assert(img1 != NULL && img2 != NULL);
+  assert(img1->height == img2->height && img1->width == img2->width);
   
-  if (img1->height != img2->height || img1->width != img2->width){ 
-    return 0;
-  } 
+  //loops through every row and checks if its the same between img1 & img2
   for(uint32 i = 0; i < img1->width; i++){
     if(img1->row[i] != img2->row[i]){
       return 0;
@@ -613,15 +612,18 @@ Image ImageNEG(const Image img) {
   return newImage;
 }
 
-Image ImageAND(const Image img1, const Image img2) { //*
+Image ImageAND(const Image img1, const Image img2) { 
   assert(img1 != NULL && img2 != NULL);
-  
+  assert(img1->height == img2->height && img1->width == img2->width);
+  //Creates new image
   Image img = AllocateImageHeader(img1->width, img1->height);
   
-
+  //Itereates trough the img height 
   for(uint32 i = 0; i < img1->height; i++){
+    //gets the values of every bit from the 2 and 1st image
     uint8* Img_res = UncompressRow(img1->width, img1->row[i]);
     uint8* Uncomp_img2 = UncompressRow(img2->width, img2->row[i]);
+    //loops trough the rows and operates AND between every bit
     for(uint32 j = 0; j < img1-> width; j++){
       Img_res[j] = Img_res[j] & Uncomp_img2[j];
     }
@@ -631,15 +633,18 @@ Image ImageAND(const Image img1, const Image img2) { //*
   return img;
 }
 
-Image ImageOR(const Image img1, const Image img2) { //*
+Image ImageOR(const Image img1, const Image img2) { 
   assert(img1 != NULL && img2 != NULL);
-
+  assert(img1->height == img2->height && img1->width == img2->width);
+  //Creates new image
   Image img = AllocateImageHeader(img1->width, img1->height);
   
-
+  //Itereates trough the img height 
   for(uint32 i = 0; i < img1->height; i++){
+    //gets the values of every bit from the 2 and 1st image
     uint8* Img_res = UncompressRow(img1->width, img1->row[i]);
     uint8* Uncomp_img2 = UncompressRow(img2->width, img2->row[i]);
+    //loops trough the rows and operates OR between every bit
     for(uint32 j = 0; j < img1-> width; j++){
       Img_res[j] = Img_res[j] | Uncomp_img2[j];
     }
@@ -649,15 +654,18 @@ Image ImageOR(const Image img1, const Image img2) { //*
   return img;
 }
 
-Image ImageXOR(Image img1, Image img2) { //*
+Image ImageXOR(Image img1, Image img2) { 
   assert(img1 != NULL && img2 != NULL);
-
+  assert(img1->height == img2->height && img1->width == img2->width);
+  //Creates new image
   Image img = AllocateImageHeader(img1->width, img1->height);
   
-
+  //Itereates trough the img height 
   for(uint32 i = 0; i < img1->height; i++){
+    //gets the values of every bit from the 2 and 1st image
     uint8* Img_res = UncompressRow(img1->width, img1->row[i]);
     uint8* Uncomp_img2 = UncompressRow(img2->width, img2->row[i]);
+    //loops trough the rows and operates XOR between every bit
     for(uint32 j = 0; j < img1-> width; j++){
       Img_res[j] = Img_res[j] ^ Uncomp_img2[j];
     }
@@ -735,11 +743,20 @@ Image ImageReplicateAtBottom(const Image img1, const Image img2) {
   uint32 index2 = 0; //index to copy the second image rows
   
   for(uint32 i = 0; i < new_height; i++){ //loop to get the rows
+
     
     if(i<img1->height){ 
-      newImage->row[i] = img1->row[i];
+      //Gets the num of elements in the i row of img1
+      uint32 num_elems = GetSizeRLERowArray(img1->row[i]);
+      newImage->row[i] = AllocateRLERowArray(num_elems);
+      //picks up the memory already used for img1 to the new image so it doesn't have to store it again
+      memcpy(newImage->row[i], img1->row[i], num_elems * sizeof(int));
     }else{
-      newImage->row[i] = img2->row[index2++]; 
+      //Gets the num of elements in the i row of img1
+      uint32 num_elems = GetSizeRLERowArray(img2->row[index2]);
+      newImage->row[i] = AllocateRLERowArray(num_elems);
+      //picks up the memory already used for img2 to the new image so it doesn't have to store it again
+      memcpy(newImage->row[i], img2->row[index2++], num_elems * sizeof(int));
     }
   }
 
@@ -756,20 +773,56 @@ Image ImageReplicateAtBottom(const Image img1, const Image img2) {
 Image ImageReplicateAtRight(const Image img1, const Image img2) {
   assert(img1 != NULL && img2 != NULL);
   assert(img1->height == img2->height);
-
+  //Gets the new dimensions
   uint32 new_width = img1->width + img2->width;
   uint32 new_height = img1->height;
-
+  //Creates a new image
   Image newImage = AllocateImageHeader(new_width, new_height);
-
+  //Iterates through
   for(uint32 i = 0; i < new_height; i++){
+    //gets the values of every bit from the 2 and 1st image
     uint8* Uncompressed_img2 = UncompressRow(img2->width, img2->row[i]);
     uint8* res_img = UncompressRow(new_width, img1->row[i]);
+    //Iterates trough each row and adds the second image to the first
     for(uint32 j = 0; j <new_height; j++){
       res_img[j+img1->width]= Uncompressed_img2[j];
     }
+    //Compresses the rows and adds it to the image
     newImage->row[i] = CompressRow(new_width, res_img);
   }
 
   return newImage;
+}
+
+
+void ChessboardMemAnalizingFunc(uint32 width, uint32 height, uint32 square_edge) {
+    //Print of the dimensions
+    printf("width: %u; height: %u; square_edge: %u.\n", width, height, square_edge);
+
+    //Creates the image
+    Image img = ImageCreateChessboard(width, height, square_edge, BLACK);
+
+    //inicializes the runs and total memory count
+    uint32 runs = 0;
+    //inicializes at 8 because of the header
+    uint32 total_mem = 8;
+
+
+    // Goes through every row 
+    for (uint32 i = 0; i < height; i++) {
+        //Gets the number of runs in the row
+        uint32 runs_in_RLErow = GetNumRunsInRLERow(img->row[i]);
+        // increases the count
+        runs += runs_in_RLErow;
+        // counts the stored bytes used and adds it to the total
+        // (value of the bit + runs_in_RLErow + EOR) * size of(uint32)->(4bytes)
+        total_mem += (runs_in_RLErow + 2) * sizeof(uint32);
+    }
+
+    //results:
+    printf("Total Runs: %u\n", runs);
+    printf("Memory Used (bytes): %u\n", total_mem);
+
+    // Free the memory allocated
+    ImageDestroy(&img);
 }

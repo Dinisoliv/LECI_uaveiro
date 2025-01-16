@@ -1,3 +1,14 @@
+// imageBWTest - A program that performs some image processing.
+//
+// This program is an example use of the imageBW module,
+// a programming project for the course AED, DETI / UA.PT
+//
+// You may freely use and modify this code, NO WARRANTY, blah blah,
+// as long as you give proper credit to the original and subsequent authors.
+//
+// The AED Team <jmadeira@ua.pt, jmr@ua.pt, ...>
+// 2024
+
 #include <assert.h>
 #include <errno.h>
 #include <stdio.h>
@@ -7,111 +18,104 @@
 #include "imageBW.h"
 #include "instrumentation.h"
 
-#define TEST_IMAGE_WIDTH  16
-#define TEST_IMAGE_HEIGHT 8
+int main(int argc, char* argv[]) {
+  // To initalize operation counters
+  ImageInit();
 
-// Function prototypes
-void RunTests();
-double MeasureExecutionTime(Image (*operation)(const Image, const Image), const Image img1, const Image img2, const char* testName);
-void PrintExecutionResults(const char* testName, double timeTaken);
+  // Creating and displaying some images
+  Image white_image = ImageCreate(8, 8, WHITE);
+  ImageRAWPrint(white_image);
 
-int main() {
-    // Initialize the image library and instrumentation
-    ImageInit();
+  Image black_image = ImageCreate(8, 8, BLACK);
+  ImageRAWPrint(black_image);
 
-    InstrCalibrate();
+  Image image_1 = ImageNEG(white_image);
+  ImageRAWPrint(image_1);
 
-    // Run the defined tests
-    RunTests();
+  Image imageChess = ImageCreateChessboard(8,8,1,WHITE);
+  ImageRAWPrint(imageChess);
+  
+  Image image_2 = ImageReplicateAtBottom(white_image, black_image);
+  ImageRAWPrint(image_2);
 
-    return 0;
-}
+  printf("image_1 AND image_1\n");
+  Image image_3 = ImageAND(image_1, image_1);
+  ImageRAWPrint(image_3);
 
-// Function to execute the tests
-void RunTests() {
-    printf("Generating test images...\n");
+  printf("image_1 AND image_2\n");
+  Image image_4 = ImageAND(image_1, imageChess);
+  ImageRAWPrint(image_4);
 
-    // Generate the test images
-    Image imgBlack = ImageCreate(TEST_IMAGE_WIDTH, TEST_IMAGE_HEIGHT, BLACK);
-    Image imgWhite = ImageCreate(TEST_IMAGE_WIDTH, TEST_IMAGE_HEIGHT, WHITE);
-    Image chessboard1 = ImageCreateChessboard(16, 8, (uint8) 2, WHITE);
-    Image chessboard2 = ImageCreateChessboard(16, 8, (uint8) 4, BLACK);
-    Image random = GenerateTestImage(TEST_IMAGE_WIDTH, TEST_IMAGE_HEIGHT);
-    Image random2 = GenerateTestImage(TEST_IMAGE_WIDTH, TEST_IMAGE_HEIGHT);
+  printf("image_1 OR image_2\n");
+  Image image_5 = ImageOR(image_1, imageChess);
+  ImageRAWPrint(image_5);
 
-    //printImageRLE(imgBlack);
-    //printf("------------------");
-    //printImageRLE(imgWhite);
-    //printf("------------------");
-    //printImageRLE(chessboard1);
-    //printf("------------------");
-    //printImageRLE(chessboard2);
-    //printf("------------------");
-    //printImageRLE(random);
-    //printf("------------------");
-    //printImageRLE(random2);
-    //printf("------------------");
+  printf("image_1 XOR image_1\n");
+  Image image_6 = ImageXOR(image_1, image_1);
+  ImageRAWPrint(image_6);
 
-    // List of test images
-    const Image testImages[] = {imgBlack, imgWhite, /*chessboard1, chessboard2,*/ random, random2};
-    const char* testImageNames[] = {"Black", "White", /*"Chessboard 1", "Chessboard 2",*/ "Random", "Random2"};
-    const int numImages = sizeof(testImages) / sizeof(testImages[0]);
+  printf("image_1 XOR image_2\n");
+  Image image_7 = ImageXOR(image_1, imageChess);
+  ImageRAWPrint(image_7);
 
-    // Run AND tests for all pairs of images
-    for (int i = 0; i < numImages; i++) {
-        for (int j = i; j < numImages; j++) {
-            // Measure AND operation with and without compression
-            char testName[128];
-            snprintf(testName, sizeof(testName), "AND (%s, %s)", testImageNames[i], testImageNames[j]);
-            double timeWithoutCompression = MeasureExecutionTime(ImageAND, testImages[i], testImages[j], testName);
+  Image image_8 = ImageReplicateAtRight(image_6, image_7);
+  ImageRAWPrint(image_8);
 
-            snprintf(testName, sizeof(testName), "AND with compression (%s, %s)", testImageNames[i], testImageNames[j]);
-            double timeWithCompression = MeasureExecutionTime(ImageANDWithCompression, testImages[i], testImages[j], testName);
+  Image image_9 = ImageReplicateAtRight(image_6, image_6);
+  ImageRAWPrint(image_9);
 
-            // Print results
-            PrintExecutionResults("AND without compression", timeWithoutCompression);
-            PrintExecutionResults("AND with compression", timeWithCompression);
-            printf("----------------------------------------------------------------\n");
 
-            // Print instrumentation counters
-            //InstrPrint();
-        }
-    }
-    // Free all allocated images
-    ImageDestroy(&imgBlack);
-    ImageDestroy(&imgWhite);
-    //printf("\ntest1\n");
-    //ImageDestroy(&chessboard1);
-    //printf("\ntest2\n");
-    //ImageDestroy(&chessboard2);
-    //ImageDestroy(&random);
-    //ImageDestroy(&random2);
-}
+  // Saving in PBM format
+  ImageSave(image_7, "image7.pbm");
+  ImageSave(image_8, "image8.pbm");
 
-// Function to measure execution time of an operation
-double MeasureExecutionTime(Image (*operation)(const Image, const Image), const Image img1, const Image img2, const char* testName) {
-    printf("Running test: %s...\n", testName);
+  ChessboardMemAnalizingFunc(4, 4, 1);
+  ChessboardMemAnalizingFunc(4, 4, 2);
+  ChessboardMemAnalizingFunc(4, 4, 4);
+  ChessboardMemAnalizingFunc(8, 8, 1);
+  ChessboardMemAnalizingFunc(8, 8, 2);
+  ChessboardMemAnalizingFunc(8, 8, 4);
+  ChessboardMemAnalizingFunc(8, 8, 8);
+  ChessboardMemAnalizingFunc(16, 16, 4);
+  ChessboardMemAnalizingFunc(20, 20, 5);
+  ChessboardMemAnalizingFunc(32, 32, 1);
+  ChessboardMemAnalizingFunc(32, 32, 4);
+  ChessboardMemAnalizingFunc(32, 32, 8);
+  ChessboardMemAnalizingFunc(128, 128, 16);
+  ChessboardMemAnalizingFunc(256, 256, 32);
 
-    // Reset counters and start the timer
-    InstrReset();
-    double startTime = cpu_time();
+  /*** UNCOMMENT TO TEST THE NEXT FUNCTIONS
 
-    //printf("\nTest1\n");
-    // Perform the operation
-    Image img = operation(img1, img2);
-    //printf("\nTest2\n");
+  Image image_10 = ImageHorizontalMirror(image_1);
+  ImageRAWPrint(image_10);
 
-    // Stop the timer
-    double elapsedTime = cpu_time() - startTime;
+  Image image_11 = ImageVerticalMirror(image_8);
+  ImageRAWPrint(image_11);
 
-    // Destroy the result to free memory
-    ImageDestroy(&img);
-    
-    return elapsedTime;
-}
 
-// Function to print the execution results
-void PrintExecutionResults(const char* testName, double timeTaken) {
-    printf("Test: %s\n", testName);
-    printf("Elapsed time: %.6f seconds\n\n", timeTaken);
+
+  ***/
+
+  // Housekeeping
+  ImageDestroy(&white_image);
+  ImageDestroy(&black_image);
+  ImageDestroy(&image_1);
+  ImageDestroy(&image_2);
+  ImageDestroy(&imageChess);
+  ImageDestroy(&image_3);
+  ImageDestroy(&image_4);
+  ImageDestroy(&image_5);
+  ImageDestroy(&image_6);
+  ImageDestroy(&image_7);
+  ImageDestroy(&image_8);
+  ImageDestroy(&image_9);
+
+  /*** UNCOMMENT IF YOU CREATE THOSE IMAGES
+
+  ImageDestroy(&image_10);
+  ImageDestroy(&image_11);
+
+   ***/
+
+  return 0;
 }
