@@ -1,0 +1,5 @@
+2.
+
+3. Ao desconectar o terminal do PC2 da rede é enviada Deauthentication packet, e depois voltando a conectar outra vez é iniciada a fase de autenticação (com authentication packet), e depois associação (com association request e response). E depois deste processo são enviados acknowlegde packets, para confirmar a ligação.
+
+(802.11)

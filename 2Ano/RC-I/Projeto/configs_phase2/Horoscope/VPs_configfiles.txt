@@ -1,0 +1,45 @@
+Configuration of VPs:
+
+set pcname Capricornus
+ip 203.19.19.97 203.19.19.110 28
+ip 2002:a191:bc93:203:2050:79ff:fe66:680b/64
+
+set pcname Gemini
+ip 172.29.33.1 172.29.33.62 26
+ip 2002:a191:bc93:102:2050:79ff:fe66:6804/64
+
+set pcname Leo
+ip 203.19.19.33 203.19.19.62 27
+ip 2002:a191:bc93:102:2050:79ff:fe66:6803/64
+
+set pcname Pisces
+ip 203.19.19.65 203.19.19.78 28
+ip 2002:a191:bc93:201:2050:79ff:fe66:680a/64
+
+set pcname Scorpius
+ip 172.29.33.161 172.29.33.174 28
+ip 2002:a191:bc93:202:2050:79ff:fe66:6807/64
+
+set pcname Taurus
+ip 203.19.19.1 203.19.19.30 27
+ip 2002:a191:bc93:101:2050:79ff:fe66:6801/64
+
+set pcname Aquarius
+ip 203.19.19.81 203.19.19.94 28
+ip 2002:a191:bc93:202:2050:79ff:fe66:6809/64
+
+set pcname Virgo
+ip 172.29.33.65 172.29.33.126 26
+
+set pcname Aires
+dhcp
+
+set pcname Sagitarius
+dhcp
+
+set pcname Libra
+dhcp
+
+set pcname Cancer
+dhcp
+

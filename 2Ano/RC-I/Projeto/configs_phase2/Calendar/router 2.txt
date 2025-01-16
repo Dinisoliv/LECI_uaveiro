@@ -1,0 +1,196 @@
+Using 3719 out of 522232 bytes!
+
+!
+! Last configuration change at 17:10:10 UTC Fri Nov 29 2024
+upgrade fpd auto
+version 15.1
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+ip source-route
+no ip icmp rate-limit unreachable
+ip cef
+!
+!
+!
+ip dhcp excluded-address 172.20.13.129 172.20.13.159
+ip dhcp excluded-address 172.20.13.171 172.20.13.190
+ip dhcp excluded-address 172.20.13.193 172.20.13.204
+ip dhcp excluded-address 172.20.13.216 172.20.13.222
+ip dhcp excluded-address 172.20.12.1 172.20.12.149
+ip dhcp excluded-address 172.20.12.161 172.20.12.254
+ip dhcp excluded-address 172.20.13.1 172.20.13.69
+ip dhcp excluded-address 172.20.13.81 172.20.13.126
+!
+ip dhcp pool 6
+ network 172.20.13.128 255.255.255.192
+ default-router 172.20.13.190
+ dns-server 203.184.191.249
+!
+ip dhcp pool 8
+ network 172.20.13.192 255.255.255.224
+ default-router 172.20.13.222
+ dns-server 203.184.191.249
+!
+ip dhcp pool 2
+ network 172.20.12.0 255.255.255.0
+ default-router 172.20.12.254
+ dns-server 203.184.191.249
+!
+ip dhcp pool 4
+ network 172.20.13.0 255.255.255.128
+ default-router 172.20.13.126
+ dns-server 203.184.191.249
+!
+!
+no ip domain lookup
+ipv6 unicast-routing
+ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+crypto pki token default removal timeout 0
+!
+!
+!
+redundancy
+!
+!
+ip tcp synwait-time 5
+!
+!
+!
+!
+!
+!
+!
+!
+interface Ethernet0/0
+ no ip address
+ shutdown
+ duplex auto
+!
+interface GigabitEthernet0/0
+ no ip address
+ ip access-group 101 out
+ ip nat outside
+ ip virtual-reassembly in
+ duplex full
+ speed 1000
+ media-type gbic
+ negotiation auto
+!
+interface FastEthernet1/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface FastEthernet1/1
+ ip address 172.20.13.226 255.255.255.252
+ ip nat inside
+ ip virtual-reassembly in
+ duplex auto
+ speed auto
+ ipv6 address 2002:A194:BC80:300::6/126
+ ipv6 enable
+!
+interface FastEthernet2/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface FastEthernet2/1
+ no ip address
+ ip nat inside
+ ip virtual-reassembly in
+ duplex auto
+ speed auto
+!
+interface FastEthernet2/1.6
+ encapsulation dot1Q 6
+ ip address 203.184.191.190 255.255.255.192 secondary
+ ip address 172.20.13.190 255.255.255.192
+ ipv6 address 2002:A194:BC80:101::1/64
+ ipv6 enable
+!
+interface FastEthernet2/1.8
+ encapsulation dot1Q 8
+ ip address 203.184.191.246 255.255.255.248 secondary
+ ip address 172.20.13.222 255.255.255.224
+ ipv6 address 2002:A194:BC80:102::1/64
+ ipv6 enable
+!
+ip forward-protocol nd
+no ip http server
+no ip http secure-server
+!
+!
+ip nat pool MYNATPOOL 203.184.191.253 203.184.191.254 netmask 255.255.255.252
+ip nat inside source list 2 pool MYNATPOOL overload
+ip route 0.0.0.0 0.0.0.0 192.168.101.11
+ip route 172.20.12.0 255.255.255.0 172.20.13.225
+ip route 172.20.13.0 255.255.255.128 172.20.13.225
+ip route 203.184.191.192 255.255.255.224 172.20.13.225
+ip route 203.184.191.224 255.255.255.240 172.20.13.225
+ip route 203.184.191.248 255.255.255.252 172.20.13.225
+!
+access-list 2 deny   172.20.13.192 0.0.0.31
+access-list 2 permit 172.20.12.0 0.0.1.255
+access-list 101 deny   ip 172.20.13.192 0.0.0.31 any
+access-list 101 permit ip any any
+no cdp log mismatch duplex
+ipv6 route 2002:A194:BC80:201::/64 2002:A194:BC80:300::5
+ipv6 route 2002:A194:BC80:202::/64 2002:A194:BC80:300::5
+ipv6 route 2002:A194:BC80:203::/64 2002:A194:BC80:300::5
+ipv6 route ::/0 2002:5755::1
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+mgcp profile default
+!
+!
+!
+gatekeeper
+ shutdown
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login
+ transport input all
+!
+end

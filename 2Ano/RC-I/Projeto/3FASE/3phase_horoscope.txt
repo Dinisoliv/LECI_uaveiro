@@ -1,0 +1,164 @@
+-/etc/bind/db.horoscope.pt
+
+$TTL 604800
+$ORIGIN horoscope.pt.
+
+@       IN      SOA     ns1.horoscope.pt. admin.horoscope.pt. (
+                        2024121401        ; Serial
+                        604800            ; Refresh
+                        86400             ; Retry
+                        2419200           ; Expire
+                        604800 )          ; Negative Cache TTL
+
+        IN      NS      ns1.horoscope.pt.
+
+ns1     IN      A       203.19.19.113    ; DNS server IP
+@       IN      A       203.19.19.113    ; Root domain
+www     IN      A       203.19.19.113    ; www.horoscope.pt
+threads IN      A       203.19.19.113    ; threads.horoscope.pt
+
+Taurus  IN      A       203.19.19.1          ; A record for Taurus.horoscope.pt
+Gemini  IN      A       172.29.33.1          ; A record for Gemini.horoscope.pt
+Leo     IN      A       203.19.19.62         ; A record for Leo.horoscope.pt
+Virgo   IN      A       172.29.33.65         ; A record for Virgo.horoscope.pt
+Pisces  IN      A       203.19.19.65         ; A record for Pisces.horoscope.pt
+Aquarius        IN      A       203.19.19.81 ; A record for Aquarius.horoscope.pt
+Capricornous    IN      A       203.19.19.97 ; A record for Capricornous.horoscope.pt
+
+
+-/etc/bind
+
+cat named.conf.local 
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+zone "aas.netconfs.net" in{
+	type master;
+	file "/etc/bind/db.aas.netconfs.net";
+};
+
+zone "horoscope.pt" {
+    type master;
+    file "/etc/bind/db.horoscope.pt";
+};
+
+
+-etc/resolv.conf
+
+nameserver 172.0.0.1
+nameserver 203.184.191.249
+nameserver 192.168.100.1
+
+-/etc/apache2/sites-available
+
+<VirtualHost *:80>
+    DocumentRoot /var/www/html/horoscope.pt-80
+    ServerName horoscope.pt
+    ServerAlias www.horoscope.pt
+</VirtualHost>
+
+
+-/var/www/html/horoscope.pt-80/index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horoscope</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #1c1c2a, #392f5a);
+            color: #fff;
+            text-align: center;
+        }
+
+        header {
+            background-color: #2c2c54;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .horoscope-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px auto;
+            max-width: 1200px;
+            gap: 20px;
+        }
+
+        .horoscope-card {
+            background-color: #423f75;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            width: 250px;
+            transition: transform 0.3s ease;
+        }
+
+        .horoscope-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .horoscope-card h2 {
+            font-size: 1.8em;
+            margin: 0 0 10px;
+        }
+
+        .horoscope-card p {
+            font-size: 1em;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 10px;
+            background-color: #2c2c54;
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Daily Horoscope</h1>
+    </header>
+
+    <div class="horoscope-container">
+        <div class="horoscope-card">
+            <h2>Aries</h2>
+            <p>Today is a great day to take bold actions and pursue your dreams. Trust your instincts!</p>
+        </div>
+        <div class="horoscope-card">
+            <h2>Taurus</h2>
+            <p>Focus on grounding yourself today. Spend time in nature or with loved ones.</p>
+        </div>
+        <div class="horoscope-card">
+            <h2>Gemini</h2>
+            <p>Your curiosity will lead you to exciting discoveries. Keep an open mind!</p>
+        </div>
+        <div class="horoscope-card">
+            <h2>Cancer</h2>
+            <p>Emotional connections are key today. Reach out to someone you care about.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Horoscope Inc. All rights reserved.</p>
+    </footer>
+</body>
+</html>

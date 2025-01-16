@@ -1,0 +1,9 @@
+MAC adress (Switch from browser)
+00:19:5b:85:08:01
+
+5.
+    Whilst connecting to the switch via browser, the package exchange is almost constant, so it refreshes the MAC adress Table quicker than the aging time.
+    On the other hand, while using the serial interface to connect with the switch there aren't packeges being sent, after the aging time the switch forgets the MAC adress of the PC.
+    
+8.
+    When executing the ping command from the router to the server, we observed that the first packet (ICMP) sent a request to both PC and Server (Flooding). Then only the server responded (with his MAC adress), and afterwards the switch performed Forwarding, sending the packages directly to the Server. So in the PC wireshark only appeared a request (with the destination of the IP of the server) in which no response was found.

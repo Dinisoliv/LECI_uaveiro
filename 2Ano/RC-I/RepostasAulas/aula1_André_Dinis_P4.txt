@@ -1,0 +1,10 @@
+Exercicio 5:
+The periocity of the IMCP packet is around 1s, for each ping (request and reply from the pc to the router).
+Each 2 equal sequence number field represents the round-trip (time of the request and the reply), and it's used to calculate RTT. 
+
+Exercicio 6:
+PC Ethernet adress: 64 4e d7 1d 7a fc (Source)
+Router Ethernet: 00 21 d8 65 0c 78
+Type field or Ethernet header: 08 00 (IPv4)
+Protocol field of IP Header: ICMP 01
+Type field of ICMP header: Reply: 00 ; Request: 08

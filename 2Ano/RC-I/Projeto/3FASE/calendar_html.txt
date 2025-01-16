@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário Interativo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .calendar {
+            width: 300px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .calendar-header h2 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+        button {
+            padding: 8px;
+            font-size: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .calendar-weekdays, .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            text-align: center;
+        }
+        .calendar-weekdays div {
+            font-weight: bold;
+            color: #666;
+        }
+        .calendar-days div {
+            padding: 10px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .calendar-days div:hover {
+            background-color: #ececec;
+        }
+        .today {
+            background-color: #007bff;
+            color: green;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            max-height: 500px;
+        }
+        .sidebar h3 {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .sidebar p {
+            font-size: 0.9rem;
+            color: #555;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calendário Interativo</h1>
+    <div class="container">
+        <div class="calendar">
+            <div class="calendar-header">
+                <button id="prev-month">‹</button>
+                <h2 id="month-year"></h2>
+                <button id="next-month">›</button>
+            </div>
+            <div class="calendar-weekdays">
+                <div>Dom</div>
+                <div>Seg</div>
+                <div>Ter</div>
+                <div>Qua</div>
+                <div>Qui</div>
+                <div>Sex</div>
+                <div>Sáb</div>
+            </div>
+            <div class="calendar-days" id="days-container">
+                <!-- Dates will be populated here -->
+            </div>
+        </div>
+        <div class="sidebar" id="sidebar">
+            <h3 id="sidebar-title">Janeiro</h3>
+            <p id="sidebar-description"> Começo de um Novo Ano!</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const monthNames = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+            const events = [
+                { title: 'Janeiro', description: 'Começo de um Novo Ano! A época de exames nem te deixa bem comemorar!' },
+                { title: 'Fevereiro', description: 'A vida são dois dias, o Carnaval são três!' },
+                { title: 'Março', description: 'A Primavera chegou! A vida até fica mais fácil!' },
+                { title: 'Abril', description: 'A Páscoa celebra esperança e trás chocolates em forma de ovos!' },
+                { title: 'Maio', description: 'Dia do Trabalhador, em honra aos esforços dos trabalhadores.' },
+                { title: 'Junho', description: 'Festas Juninas animam o mês com fogueiras e noite! Mais uma época de exames o.O!' },
+                { title: 'Julho', description: 'Verão traz o calor e as infemas idas à praia!' },
+                { title: 'Agosto', description: 'Pico do verão! O aniversário do meu amigo Jorge :)' },
+                { title: 'Setembro', description: 'Vinte e Sete de Setembro comemora-se o meu aniversário! *-*' },
+                { title: 'Outubro', description: 'O halloween OoooH!' },
+                { title: 'Novembro', description: 'Dia de Finados lembra e homenageia entes queridos. Dia 11 dia do São Martinho!' },
+                { title: 'Dezembro', description: 'Natal celebra união, paz e generosidade.' }
+            ];
+
+            let currentDate = new Date();
+            let currentMonth = currentDate.getMonth();
+            let currentYear = currentDate.getFullYear();
+
+            function renderCalendar() {
+                document.getElementById('month-year').textContent = `${monthNames[currentMonth]} ${currentYear}`;
+                const daysContainer = document.getElementById('days-container');
+                daysContainer.innerHTML = '';
+
+                const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+                const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+                for (let i = 0; i < firstDayOfMonth; i++) {
+                    const emptyDay = document.createElement('div');
+                    daysContainer.appendChild(emptyDay);
+                }
+
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const dayElement = document.createElement('div');
+                    dayElement.textContent = day;
+                    if (day === currentDate.getDate() && currentMonth === currentDate.getMonth() && currentYear === currentDate.getFullYear()) {
+                        dayElement.classList.add('today');
+                    }
+                    daysContainer.appendChild(dayElement);
+                }
+
+                updateSidebar();
+            }
+
+            function updateSidebar() {
+                const event = events[currentMonth];
+                document.getElementById('sidebar-title').textContent = event.title;
+                document.getElementById('sidebar-description').textContent = event.description;
+            }
+
+            document.getElementById('prev-month').addEventListener('click', function () {
+                currentMonth--;
+                if (currentMonth < 0) {
+                    currentMonth = 11;
+                    currentYear--;
+                }
+                renderCalendar();
+            });
+
+            document.getElementById('next-month').addEventListener('click', function () {
+                currentMonth++;
+                if (currentMonth > 11) {
+                    currentMonth = 0;
+                    currentYear++;
+                }
+                renderCalendar();
+            });
+
+            renderCalendar();
+        });
+    </script>
+</body>
+</html>

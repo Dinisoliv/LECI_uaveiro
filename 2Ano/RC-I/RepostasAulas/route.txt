@@ -1,0 +1,96 @@
+15/10/2024
+
+119480, 119193
+
+	1. 
+	192.20.20.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.20.20.0/24 is directly connected, FastEthernet1/0
+L        192.20.20.1/32 is directly connected, FastEthernet1/0
+      192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.1.0/24 is directly connected, FastEthernet0/0
+L        192.168.1.11/32 is directly connected, FastEthernet0/0
+
+	We configured two interfaces on the router (FastEthernet 0/0 and 1/0) with two different IPs (192.20.20.1/24 and 192.168.1.11/32). This shows that the router only knows the networks directly connected to its interfaces.
+	
+	2. No ping were successful because there was no default gateway configured yet. 
+	
+	3. We observed that the ping request from the VPC to the PC is sent but there is no response (timeout). There is no default gateway in the way back from the pc to the vpc, so the pc receives but xan't send back.
+	
+	4. With both of the default gateways configured, it was possible to ping from the PC to the VPC.
+	
+	ICMP Echo Request
+		Ethernet packet header Source MAC Address: TP-Link_18:12:f7 (7c:c2:c6:18:12:f7)
+		Destination MAC Address: ca:01:22:6d:00:00
+		IP packet header Source IP Address: 192.168.1.1 
+		Destination IP Address: 192.20.20.1
+		
+	ICMP Echo Reply
+		Ethernet packet header Source MAC Address: ca:01:22:6d:00:00
+		Destination MAC Address: TP-Link_18:12:f7 (7c:c2:c6:18:12:f7)
+		IP packet header Source IP Address: 192.20.20.1
+		Destination IP Address: 192.168.1.1
+
+	5.
+	ICMP Echo Request
+		Ethernet packet header Source MAC Address: 00:50:79:66:68:00
+		Destination MAC Address: ca:01:22:6d:00:1c
+		IP packet header Source IP Address: 192.168.20.1
+		Destination IP Address: 192.20.20.1
+	ICMP Echo Reply
+		Ethernet packet header Source MAC Address: ca:01:22:6d:00:1c
+		Destination MAC Address: 00:50:79:66:68:00
+		IP packet header Source IP Address: 192.20.20.1
+		Destination IP Address: 192.168.20.1
+	
+	6. Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+	Internet  192.20.20.1             -   ca01.226d.001c  ARPA   FastEthernet1/0
+	Internet  192.20.20.11            0   0050.7966.6800  ARPA   FastEthernet1/0
+	Internet  192.168.1.1            34   7cc2.c618.12f7  ARPA   FastEthernet0/0
+	Internet  192.168.1.11            -   ca01.226d.0000  ARPA   FastEthernet0/0
+the router knows the mac adresses for each IP.
+
+    7.For each ping is sent a arp request in broadcast and there is none arp reply because the IP doesn't exist on the network.
+    
+    8. In the capture there's a ICMP Echo request and the router reply with "Destination unreachable" . Because if the router doesn't know the IP adress (it's not present on the rounting table), the router drops the packet. On the other and the switch floods the frame if it doesn't know the MAC adress for IP (not saved in the MAC adress table).
+    
+    10.
+          192.30.30.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.30.30.0/24 is directly connected, FastEthernet1/0
+L        192.30.30.100/32 is directly connected, FastEthernet1/0
+      192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.1.0/24 is directly connected, FastEthernet0/0
+L        192.168.1.11/32 is directly connected, FastEthernet0/0
+
+    The routing table looks simiiar to the experiments with only one router, showing the 2 networks that are connected to it.
+
+    11. No response is found for the ping because the the given ip adress is unreachable (timeout). In the network 192.30.30.0, the ping request is sent to the switch, which sends a arp request and there is no reply because of the non-existent ip.
+    
+    12. The ping reply as the code error 1 - host unreachable, because the routers knows a route to the requested network but cannot reach the destination host.
+    In the network 192.30.30.0, in the switch when the first ping request a arp request is sent to find the mac adress of destination. On the next ping the switch already knows the mac addresses.
+    
+    13. routing table R2:
+       192.20.20.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.20.20.0/24 is directly connected, FastEthernet1/0
+L        192.20.20.1/32 is directly connected, FastEthernet1/0
+      192.30.30.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.30.30.0/24 is directly connected, FastEthernet0/0
+L        192.30.30.200/32 is directly connected, FastEthernet0/0
+S     192.168.1.0/24 [1/0] via 192.30.30.100
+
+        routing table R1:
+S     192.20.20.0/24 [1/0] via 192.30.30.200
+      192.30.30.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.30.30.0/24 is directly connected, FastEthernet1/0
+L        192.30.30.100/32 is directly connected, FastEthernet1/0
+      192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.1.0/24 is directly connected, FastEthernet0/0
+L        192.168.1.11/32 is directly connected, FastEthernet0/0
+
+    14. The ping request goes through 2 routers, and the TTL is decremented by 1 in each router, so if time to live is less than 2 the router where TTL = 0, the router drops the package.
+    
+    15.
+        (i) - Each router is identified by the default gateway of the network where the packages are coming from.
+        Are sent ICMP Echo requests incrementing the TTL each ping (starting in 1), so each time it passes to the router TTL is decremented, so in each times TTL ends in transit it gives information to  traceroute that the packages went through one more router, until it gets to the destination. 
+        (iii) - when the packages gets to the destination
+        
+    16. Only appears 2 hops because after the second router, the router doesn't know where to send the package.

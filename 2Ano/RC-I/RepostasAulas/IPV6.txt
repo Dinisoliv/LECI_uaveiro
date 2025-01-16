@@ -1,0 +1,18 @@
+IPV6
+
+1. There are two types of packets shown, ICMPv6(IPv6) and MDNS.
+First, there is a solicitation from the VM to the Switch for a specific IPv6 address. Then, the Switch "flushes" that IPv6 address, shown through MDNS packets.
+The Switch attempts to communicate with a Router (through Router Solicitation), but since there is no Router connected, nothing happens.
+
+And some multicast listeners report message are detected from time to time.
+
+2. Since there is a router to communicate, we get Router Advertisements and CDP packets, that show where the Router is connected and that there is connection between the VM and the Router
+
+3. The global IPv6 address is defined with the given command for the network in the specified interface. So the VM sends out a neighbor solicitation (asking for the given address and checking duplicates). And then after IP configuration, it sends out an advertisement, confirming it had been configured with the IP.
+
+4. With a given pc MAC address, the EUI-64 method, the mac address it's splited in 2 and added 'fffe' in middle and the 7 MSbit is inverted.
+For example: CA-01-3A-D0-00-1C -> 8A01:3AFF:FE00:1C
+Even though its simple, it may generate a safety problem because if someone can access the network, it's going to be easy to calculate/find addresses.
+The process of obtaining a IPv6 address does not change if done by the same MAC address, since the process is the exact same, hence why it's not very secure to use.
+
+5. Through neighbor solicitation from the pc and neighbor advertisement its discovered the mac address and after that communication and packet exchange is enabled. 

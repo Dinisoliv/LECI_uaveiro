@@ -1,0 +1,6 @@
+1. The source client ports are used to ensure unique identification for each client on the network, and so it allows multiple clients to be connected to the same server.
+This port number is assigned dynamically by the system.
+
+2. Same as UDP ports are used for identification and ensure uniqueness and are choosed dynamically.
+Which session or connection with a client, is made by a 3 way handshake, 1st with a synchronize (message from the client asking for connnection and it's information of IP and Port), Syncronize and Acknowledge message from the server confirming the connection and Acknowledge from the client confirming connection.
+Which connection is defined by a thread for indenpendent communication. 

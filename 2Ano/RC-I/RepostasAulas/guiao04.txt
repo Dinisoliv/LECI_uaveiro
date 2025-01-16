@@ -1,0 +1,16 @@
+119193, 119480
+
+2.	The pings from PC1, because it is the only local IP in the Nat translation table.
+	
+3.	The pings were successful, because, by clearing the NAT translation table, there was no allocated local IP, so the PC2 IP was inserted on the slot.
+
+4.	After 60 seconds of inactivity from PC1, it's IP is deleted from the Nat transalation table. After that, the PC2 IP has a spot in the table and then connectivity is possible.
+
+5.	By allowing overload, multiple internal source addresses can be translated.
+
+6.	The NAT translation table now contains two rows for each of the protocols(UDP & TCP), each row for the specified port.
+
+8.	When the ping arrives in the router, the router recognizes the static public address and it forwards the ping to the private address, as  defined in static NAT, allowing a comunication between them.
+    Static NAT/PAT is used when an internal host requires consistent and secure access by external sources, especially when those connections are initiated externally. It ensures a stable, predictable IP or port mapping, allowing reliable access from outside the network.
+	
+10. For ip dhcp and IP dhcp -r are exhanged DHCP Discover, DHCP Offer, DHCP Request, DHCP Acknowledge, being diferent when renewal in the requested IP in DHCP Disvover is the IP the machine already has. And the contents of DHCP bindings are equal (the same assigned to the machine). When releasing the IP is sent a DHCP Release packet to the router and then there is no more information at the router about the IP of PC1.

@@ -1,0 +1,59 @@
+1st exercise table:
+
+Ping from |Ping to	    | Connectivity| Packets(PC1-Switch.1 link)|Packets(PC3-Switch.1 link)
+__________|_____________|_____________|___________________________|____________________________
+  PC2	  |Switch1	    | NO	      | ARP REQUEST		          | ----------
+  PC2	  |PC3		    | NO	      | ARP REQUEST		          | ----------
+  PC2	  |192.168.1.34 | NO	      | ARP REQUEST		          | ----------
+  PC3	  |Switch1	    | YES	      | ----------		          | ARP & ICMP-(REQUEST/REPLY)
+  PC3	  |PC2		    | NO	      | ----------		          | ARP REQUEST
+  PC3	  |192.168.1.34 | NO	      | ----------		          | ARP REQUEST
+  Switch  |PC3		    | YES	      | ----------		          | ICMP REQUEST & REPLY
+  Switch  |192.168.1.34 | NO	      | ----------		          | ARP	REQUEST
+__________|_____________|_____________|___________________________|_____________________________
+  
+For case 1, 2 and 5 they aren't in the same VLAN so there is no connectivity and we only see an ARP REQUEST on the expected link. For cases 3, 6 and 8 the ping is sent for an unexistent ID so the
+2nd exercise table
+
+
+Ping from |Ping to	| Connectivity| FILTERD PACKETS
+__________|_________|_____________|______________________________________________________
+  PC1	  |Switch1	| YES	      | ----------
+  PC1	  |Switch2	| YES	      | ARP & ICMP-(REQUEST/REPLY) ID: --		 
+  PC1	  |PC2		| NO	      | ARP REQUEST		   ID: --
+  PC1	  |PC3		| NO	      | ARP REQUEST		   ID: --
+  PC2	  |Switch1	| NO	      | ARP REQUEST	   	   ID: 2
+  PC2	  |Switch2 	| NO	      | ARP REQUEST		   ID: 2
+  PC2	  |PC2		| YES	      | ----------
+  PC2	  |PC3		| YES	      | ARP & ICMP-(REQUEST/REPLY) ID: 2
+__________|_________|_____________|________________________________________________________
+
+Case1: PC1 in vlan1 and switch by defualt in vlan1.
+Case2: Same as 1
+Case3/4: different vlan so only arp request with no reply
+Case5/6: switch IP only valid for vlan1
+Case7/8: ping within the same vlan
+
+3rd exercise table
+
+Ping from |Ping to	| Connectivity| FILTERD PACKETS
+__________|_________|_____________|______________________________________________________
+  PC4	  |Switch4	| NO	      | ARP REQUEST                     ID: 2
+  PC4	  |Router	| YES	      | ARP & ICMP-(REQUEST/REPLY)      ID: 2		 
+  PC4	  |PC5		| YES	      | ARP & ICMP-(REQUEST/REPLY)      ID: 2
+  PC4	  |IP*		| NO	      | ICMP-(REQUEST/REPLY)		    ID: 2
+  PC5	  |Switch4	| NO	      | ARP & ICMP-(REQUEST)	        ID: 3
+  PC5	  |Router 	| YES	      | ARP & ICMP-(REQUEST/REPLY)      ID: 3
+  PC5	  |PC4		| YES	      | ARP & ICMP-(REQUEST/REPLY)      ID: 3
+  PC5	  |IP*		| NO	      | ICMP-(REQUEST/REPLY)            ID: 3
+__________|_________|_____________|________________________________________________________
+
+*IP : 192.1.1.100
+
+The pings to the switch only succed if PC is in vlan1.
+The pings to router always succed because it's directly connected.
+The pings to the other PC work because the default gateways were defined.
+And the pings to 192.1.1.100 get to the router and there is no information where to go.
+
+
+

@@ -1,0 +1,283 @@
+December> show ip
+
+NAME        : December[1]
+IP/MASK     : 203.184.191.241/29
+GATEWAY     : 203.184.191.246
+DNS         :
+MAC         : 00:50:79:66:68:0b
+LPORT       : 20070
+RHOST:PORT  : 127.0.0.1:20071
+MTU:        : 1500
+
+December> show ipv6
+
+NAME              : December[1]
+LINK-LOCAL SCOPE  : fe80::250:79ff:fe66:680b/64
+GLOBAL SCOPE      : 2002:a194:bc80:102:2050:79ff:fe66:680b/64
+ROUTER LINK-LAYER : ca:01:07:ec:00:39
+MAC               : 00:50:79:66:68:0b
+LPORT             : 20070
+RHOST:PORT        : 127.0.0.1:20071
+MTU:              : 1500
+
+
+November> show ip
+
+NAME        : November[1]
+IP/MASK     : 172.20.13.205/27
+GATEWAY     : 172.20.13.222
+DNS         : 203.184.191.249
+DHCP SERVER : 172.20.13.222
+DHCP LEASE  : 86397, 86400/43200/75600
+MAC         : 00:50:79:66:68:00
+LPORT       : 20048
+RHOST:PORT  : 127.0.0.1:20049
+MTU:        : 1500
+
+
+November> show ipv6
+
+NAME              : November[1]
+LINK-LOCAL SCOPE  : fe80::250:79ff:fe66:6800/64
+GLOBAL SCOPE      : 2002:a194:bc80:102:2050:79ff:fe66:6800/64
+ROUTER LINK-LAYER : ca:01:07:ec:00:39
+MAC               : 00:50:79:66:68:00
+LPORT             : 20048
+RHOST:PORT        : 127.0.0.1:20049
+MTU:              : 1500
+
+
+October> show ip
+
+NAME        : October[1]
+IP/MASK     : 172.20.13.193/27
+GATEWAY     : 172.20.13.222
+DNS         :
+MAC         : 00:50:79:66:68:01
+LPORT       : 20050
+RHOST:PORT  : 127.0.0.1:20051
+MTU:        : 1500
+
+October> show ipv6
+
+NAME              : October[1]
+LINK-LOCAL SCOPE  : fe80::250:79ff:fe66:6801/64
+GLOBAL SCOPE      : 2002:a194:bc80:102:2050:79ff:fe66:6801/64
+ROUTER LINK-LAYER : ca:01:07:ec:00:39
+MAC               : 00:50:79:66:68:01
+LPORT             : 20050
+RHOST:PORT        : 127.0.0.1:20051
+MTU:              : 1500
+
+
+September> show ip
+
+NAME        : September[1]
+IP/MASK     : 203.184.191.129/26
+GATEWAY     : 203.184.191.190
+DNS         :
+MAC         : 00:50:79:66:68:02
+LPORT       : 20052
+RHOST:PORT  : 127.0.0.1:20053
+MTU:        : 1500
+
+September> show ipv6
+
+NAME              : September[1]
+LINK-LOCAL SCOPE  : fe80::250:79ff:fe66:6802/64
+GLOBAL SCOPE      : 2002:a194:bc80:101:2050:79ff:fe66:6802/64
+ROUTER LINK-LAYER : ca:01:07:ec:00:39
+MAC               : 00:50:79:66:68:02
+LPORT             : 20052
+RHOST:PORT        : 127.0.0.1:20053
+MTU:              : 1500
+
+
+August>show ip
+
+NAME        : August[1]
+IP/MASK     : 172.20.13.160/26
+GATEWAY     : 172.20.13.190
+DNS         : 203.184.191.249
+DHCP SERVER : 172.20.13.190
+DHCP LEASE  : 86398, 86400/43200/75600
+MAC         : 00:50:79:66:68:03
+LPORT       : 20054
+RHOST:PORT  : 127.0.0.1:20055
+MTU:        : 1500
+
+
+August> show ipv6
+
+NAME              : August[1]
+LINK-LOCAL SCOPE  : fe80::250:79ff:fe66:6803/64
+GLOBAL SCOPE      : 2002:a194:bc80:101:2050:79ff:fe66:6803/64
+ROUTER LINK-LAYER : ca:01:07:ec:00:39
+MAC               : 00:50:79:66:68:03
+LPORT             : 20054
+RHOST:PORT        : 127.0.0.1:20055
+MTU:              : 1500
+
+
+July> show ip
+
+NAME        : July[1]
+IP/MASK     : 172.20.13.129/26
+GATEWAY     : 172.20.13.190
+DNS         :
+MAC         : 00:50:79:66:68:04
+LPORT       : 20056
+RHOST:PORT  : 127.0.0.1:20057
+MTU:        : 1500
+
+July> show ipv6
+
+NAME              : July[1]
+LINK-LOCAL SCOPE  : fe80::250:79ff:fe66:6804/64
+GLOBAL SCOPE      : 2002:a194:bc80:101:2050:79ff:fe66:6804/64
+ROUTER LINK-LAYER : ca:01:07:ec:00:39
+MAC               : 00:50:79:66:68:04
+LPORT             : 20056
+RHOST:PORT        : 127.0.0.1:20057
+MTU:              : 1500
+
+
+January> show ip
+
+NAME        : January[1]
+IP/MASK     : 172.20.12.1/24
+GATEWAY     : 172.20.12.254
+DNS         :
+MAC         : 00:50:79:66:68:05
+LPORT       : 20058
+RHOST:PORT  : 127.0.0.1:20059
+MTU:        : 1500
+
+January> show ipv6
+
+NAME              : January[1]
+LINK-LOCAL SCOPE  : fe80::250:79ff:fe66:6805/64
+GLOBAL SCOPE      : 2002:a194:bc80:201:2050:79ff:fe66:6805/64
+ROUTER LINK-LAYER : c2:02:01:78:00:00
+MAC               : 00:50:79:66:68:05
+LPORT             : 20058
+RHOST:PORT        : 127.0.0.1:20059
+MTU:              : 1500
+
+
+March> show ip
+
+NAME        : March[1]
+IP/MASK     : 203.184.191.225/28
+GATEWAY     : 203.184.191.238
+DNS         :
+MAC         : 00:50:79:66:68:06
+LPORT       : 20060
+RHOST:PORT  : 127.0.0.1:20061
+MTU:        : 1500
+
+March> show ipv6
+
+NAME              : March[1]
+LINK-LOCAL SCOPE  : fe80::250:79ff:fe66:6806/64
+GLOBAL SCOPE      : 2002:a194:bc80:201:2050:79ff:fe66:6806/64
+ROUTER LINK-LAYER : c2:02:01:78:00:00
+MAC               : 00:50:79:66:68:06
+LPORT             : 20060
+RHOST:PORT        : 127.0.0.1:20061
+MTU:              : 1500
+
+
+show ip
+
+NAME        : May[1]
+IP/MASK     : 172.20.13.70/25
+GATEWAY     : 172.20.13.126
+DNS         : 203.184.191.249
+DHCP SERVER : 172.20.13.226
+DHCP LEASE  : 86398, 86400/43200/75600
+MAC         : 00:50:79:66:68:07
+LPORT       : 20062
+RHOST:PORT  : 127.0.0.1:20063
+MTU:        : 1500
+
+May> show ipv6
+
+NAME              : May[1]
+LINK-LOCAL SCOPE  : fe80::250:79ff:fe66:6807/64
+GLOBAL SCOPE      : 2002:a194:bc80:202:2050:79ff:fe66:6807/64
+ROUTER LINK-LAYER : c2:02:01:78:00:00
+MAC               : 00:50:79:66:68:07
+LPORT             : 20062
+RHOST:PORT        : 127.0.0.1:20063
+MTU:              : 1500
+
+
+show ip
+
+NAME        : June[1]
+IP/MASK     : 203.184.191.193/27
+GATEWAY     : 203.184.191.222
+DNS         :
+MAC         : 00:50:79:66:68:08
+LPORT       : 20064
+RHOST:PORT  : 127.0.0.1:20065
+MTU:        : 1500
+
+June> show ipv6
+
+NAME              : June[1]
+LINK-LOCAL SCOPE  : fe80::250:79ff:fe66:6808/64
+GLOBAL SCOPE      : 2002:a194:bc80:202:2050:79ff:fe66:6808/64
+ROUTER LINK-LAYER : c2:02:01:78:00:00
+MAC               : 00:50:79:66:68:08
+LPORT             : 20064
+RHOST:PORT        : 127.0.0.1:20065
+MTU:              : 1500
+
+February> show ip
+
+NAME        : February[1]
+IP/MASK     : 172.20.12.150/24
+GATEWAY     : 172.20.12.254
+DNS         : 203.184.191.249
+DHCP SERVER : 172.20.13.226
+DHCP LEASE  : 86399, 86400/43200/75600
+MAC         : 00:50:79:66:68:09
+LPORT       : 20066
+RHOST:PORT  : 127.0.0.1:20067
+MTU:        : 1500
+
+February> show ipv6
+
+NAME              : February[1]
+LINK-LOCAL SCOPE  : fe80::250:79ff:fe66:6809/64
+GLOBAL SCOPE      : 2002:a194:bc80:201:2050:79ff:fe66:6809/64
+ROUTER LINK-LAYER : c2:02:01:78:00:00
+MAC               : 00:50:79:66:68:09
+LPORT             : 20066
+RHOST:PORT        : 127.0.0.1:20067
+MTU:              : 1500
+
+Calendar:
+
+sudo ifconfig
+[sudo] password for labcom: 
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 203.184.191.249  netmask 255.255.255.252  broadcast 203.184.191.251
+        inet6 fe80::a00:27ff:fe0c:cd2c  prefixlen 64  scopeid 0x20<link>
+        inet6 2002:a194:bc80:203:a00:27ff:fe0c:cd2c  prefixlen 64  scopeid 0x0<global>
+        ether 08:00:27:0c:cd:2c  txqueuelen 1000  (Ethernet)
+        RX packets 12  bytes 986 (986.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 85  bytes 9742 (9.5 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 83  bytes 6904 (6.7 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 83  bytes 6904 (6.7 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0

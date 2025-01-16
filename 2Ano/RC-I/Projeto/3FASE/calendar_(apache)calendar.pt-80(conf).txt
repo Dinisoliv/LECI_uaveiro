@@ -1,0 +1,7 @@
+<VirtualHost *:80>
+	DocumentRoot /var/www/html/calendar.pt-80
+	ServerName arqredes.pt
+	ServerAlias www.arqredes.pt
+	ServerAlias 203.184.191.249
+	ServerAlias 2002:a194:bc80:203:a00:27ff:fe0c:cd2c
+</VirtualHost>
