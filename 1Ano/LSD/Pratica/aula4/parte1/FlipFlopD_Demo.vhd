@@ -1,18 +1,27 @@
 library IEEE;
-use IEEE.STD_LOGIC_1164.all;
+use IEEE.std_logic_1164.all;
 
-entity FlipFlopD_Demo is
-	port(SW : in std_logic_vector(2 downto 0);
-		  KEY :  in std_logic_vector(0 downto 0);
-		  LEDR : out std_logic_vector(0 downto 0));
-end FlipFlopD_Demo;
-		  
-architecture Shell of FlipFlopD_Demo is
+entity FlipFlopD2 is
+	port (clk : in std_logic;
+			d   : in std_logic;
+			set : in std_logic;
+			rst : in std_logic;
+			q   : out std_logic);
+end FlipFlopD2;
+			
+architecture Behavioral of FlipFlopD2 is
 begin
-	ff_d : entity work.FlipFlopD2(Behavioral)
-	port map(clk => KEY(0),
-				d => SW(0),
-				set => SW(1),
-				rst => SW(2),
-				q => LEDR(0));
-end Shell;
+	process(clk)
+	begin
+		if (rst = '1') then
+				q <= '0';
+		elsif (set = '1') then
+				q <= '1';
+		end if;
+		
+		if (rising_edge(clk)) then
+				q <= d;
+			end if;
+		end if;
+	end process;
+end Behavioral;
