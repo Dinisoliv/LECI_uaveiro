@@ -6,7 +6,7 @@ Licenciatura em Engenharia de Computadores e Informática
 
 [POO](https://github.com/Dinisoliv/LECI/tree/main/1Ano/POO) - pratical classes and evaluations java code
 
-[AC-I](https://github.com/Dinisoliv/LECI/tree/main/2Ano/AC-I) - pratical classes and evaluations Assembly for MIPS code
+[AC-I](https://github.com/Dinisoliv/LECI/tree/main/2Ano/AC-I) - pratical classes Assembly for MIPS code
 
 ## Other UCs
 [FP](https://github.com/Dinisoliv/LECI/tree/main/1Ano/FP) - some code for exam preparation
