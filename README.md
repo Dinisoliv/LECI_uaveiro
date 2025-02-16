@@ -1,10 +1,12 @@
 # LECI
 Licenciatura em Engenharia de Computadores e Informática
 
-## Best to check (pratical):
-[LSD](https://github.com/Dinisoliv/LECI/tree/main/1Ano/LSD)
-[POO](https://github.com/Dinisoliv/LECI/tree/main/1Ano/POO)
-[AC-I](https://github.com/Dinisoliv/LECI/tree/main/2Ano/AC-I)
+## Best to check:
+[LSD](https://github.com/Dinisoliv/LECI/tree/main/1Ano/LSD) - pratical classes and evaluations VHDL code
+
+[POO](https://github.com/Dinisoliv/LECI/tree/main/1Ano/POO) - pratical classes and evaluations java code
+
+[AC-I](https://github.com/Dinisoliv/LECI/tree/main/2Ano/AC-I) - pratical classes and evaluations Assembly for MIPS code
 
 ## Other UCs
 [FP](https://github.com/Dinisoliv/LECI/tree/main/1Ano/FP) - some code for exam preparation
