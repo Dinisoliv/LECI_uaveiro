@@ -1,8 +1,14 @@
 # Arquitetura de Computadores I
-## 1. Aulas
-    - Exercícios realizados em Aula
-## 2. Exercicios-P
-    - Mais exercicios dos guioes
-        - A: Aula; E: Exercicio; T: TesteTreino 
-## 3. Slide Answers
-    - Resolução dos exerícios do final dos slides
+
+## 📌 Aulas
+- Exercícios resolvidos durante as aulas.
+
+## 📂 Exercícios Práticos (Exercicios-P)
+- Conjunto de exercícios baseados nos guiões.
+- **Legenda:**
+  - **A**: Aula
+  - **E**: Exercício
+  - **T**: Teste/Treino
+
+## 📑 Resolução dos Slides
+- Soluções dos exercícios localizados no final dos slides apresentados em aula.
