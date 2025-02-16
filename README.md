@@ -8,7 +8,15 @@ Licenciatura em Engenharia de Computadores e Informática
 
 [AC-I](https://github.com/Dinisoliv/LECI/tree/main/2Ano/AC-I) - pratical classes Assembly for MIPS code
 
+[RC-I](https://github.com/Dinisoliv/LECI/tree/main/2Ano/RC-I) - project development and sockets .py code
+
+## Projetos:
+[LSD](https://github.com/Dinisoliv/Projeto_Final_LSD)
+[AED-2](https://github.com/Dinisoliv/AED_Projeto2_DAO_ACS)
+
 ## Other UCs
+[AED](https://github.com/Dinisoliv/LECI/tree/main/2Ano/AED) - first project and first half of pratical classes code  
+
 [FP](https://github.com/Dinisoliv/LECI/tree/main/1Ano/FP) - some code for exam preparation
 
 [IEI](https://github.com/Dinisoliv/LECI/tree/main/1Ano/IEI) - mid projects
@@ -17,11 +25,3 @@ Licenciatura em Engenharia de Computadores e Informática
 
 [LABI](https://github.com/Dinisoliv/LECI/tree/main/1Ano/LABI) - some topics with solved exercises
 
-[RC-I](https://github.com/Dinisoliv/LECI/tree/main/2Ano/RC-I) - project development and sockets .py code
-
-[AED](https://github.com/Dinisoliv/LECI/tree/main/2Ano/AED) - first project and first half of pratical code  
-
-
-## Projetos:
-[LSD](https://github.com/Dinisoliv/Projeto_Final_LSD)
-[AED-2](https://github.com/Dinisoliv/AED_Projeto2_DAO_ACS)
