@@ -17,7 +17,7 @@ Licenciatura em Engenharia de Computadores e Informática
 
 [LABI](https://github.com/Dinisoliv/LECI/tree/main/1Ano/LABI) - some topics with solved exercises
 
-[RC-I](https://github.com/Dinisoliv/LECI/tree/main/2Ano/RC-I) - project development and socket .py code
+[RC-I](https://github.com/Dinisoliv/LECI/tree/main/2Ano/RC-I) - project development and sockets .py code
 
 [AED](https://github.com/Dinisoliv/LECI/tree/main/2Ano/AED) - first project and first half of pratical code  
 
