@@ -5,7 +5,7 @@ Licenciatura em Engenharia de Computadores e Informática
 - [LSD](https://github.com/Dinisoliv/LECI/tree/main/1Ano/LSD) - Aulas práticas e avaliações com código VHDL
 - [POO](https://github.com/Dinisoliv/LECI/tree/main/1Ano/POO) - Aulas práticas e avaliações com código Java
 - [AC-I](https://github.com/Dinisoliv/LECI/tree/main/2Ano/AC-I) - Aulas práticas e teste tipo com código Assembly para MIPS, e alguns docs para TP
-- [RC-I](https://github.com/Dinisoliv/LECI/tree/main/2Ano/RC-I) - Desenvolvimento do projeto e sockets em Python
+- [RC-I](https://github.com/Dinisoliv/LECI/tree/main/2Ano/RC-I) - Desenvolvimento do projeto, sockets em Python e algumas resposta de guiões
 
 ## 📌 Projetos:
 - [LSD](https://github.com/Dinisoliv/Projeto_Final_LSD)
