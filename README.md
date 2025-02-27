@@ -1,5 +1,7 @@
 # LECI
+Universidade de Aveiro
 Licenciatura em Engenharia de Computadores e Informática
+2023->present
 
 ## 📌 Best to check:
 - [LSD](https://github.com/Dinisoliv/LECI/tree/main/1Ano/LSD) - Aulas práticas e avaliações com código VHDL
