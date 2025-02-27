@@ -1,6 +1,8 @@
 # LECI
 Universidade de Aveiro
+
 Licenciatura em Engenharia de Computadores e Informática
+
 2023->present
 
 ## 📌 Best to check:
