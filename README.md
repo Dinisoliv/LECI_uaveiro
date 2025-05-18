@@ -10,6 +10,8 @@ Licenciatura em Engenharia de Computadores e Informática
 - [POO](https://github.com/Dinisoliv/LECI/tree/main/1Ano/POO) - Aulas práticas e avaliações com código Java
 - [AC-I](https://github.com/Dinisoliv/LECI/tree/main/2Ano/AC-I) - Aulas práticas e teste tipo com código Assembly para MIPS, e alguns docs para TP
 - [RC-I](https://github.com/Dinisoliv/LECI/tree/main/2Ano/RC-I) - Desenvolvimento do projeto, sockets em Python e algumas resposta de guiões
+- [AC-II](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/2Ano/AC-II) - Aulas práticas e exercícios de preparação para Testes P em código Assembly e C
+- [AS](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/2Ano/AS) - Portfólio da Componente Prática (Resolução de Guiões + Projeto)
 
 ## 📌 Projetos (noutros repositórios):
 - [LSD](https://github.com/Dinisoliv/Projeto_Final_LSD)
@@ -17,6 +19,7 @@ Licenciatura em Engenharia de Computadores e Informática
 
 ## 📌 Outras UCs:
 - [AED](https://github.com/Dinisoliv/LECI/tree/main/2Ano/AED) - Primeiro projeto e código da primeira metade das aulas práticas
+- [CT](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/2Ano/CT) - Trabalhos das Competências Transferíveis de IO(CT-II), TCA(CT-I) e DT(CT-I)
 - [FP](https://github.com/Dinisoliv/LECI/tree/main/1Ano/FP) - Código para preparação de exames e código dos projetos
 - [IEI](https://github.com/Dinisoliv/LECI/tree/main/1Ano/IEI) - Projetos mid
 - [ISD](https://github.com/Dinisoliv/LECI/tree/main/1Ano/ISD/Pratica) - Alguns .bdf
