@@ -1,0 +1,4 @@
+find . -type f ! -name "*.c" ! -name "*.s" ! -name "*.txt" -delete
+
+
+find . -type f ! -name "*.c" ! -name "*.s" ! -name "*.txt"
