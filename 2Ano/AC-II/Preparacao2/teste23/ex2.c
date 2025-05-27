@@ -5,7 +5,6 @@
 unsigned char toBcd(unsigned char value);
 void send2displays(unsigned char value);
 
-
 volatile int temp;
 
 int main(void){
