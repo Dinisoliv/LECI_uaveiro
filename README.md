@@ -16,6 +16,7 @@ Licenciatura em Engenharia de Computadores e Informática
 ## 📌 Projetos (noutros repositórios):
 - [LSD](https://github.com/Dinisoliv/Projeto_Final_LSD)
 - [AED-2](https://github.com/Dinisoliv/AED_Projeto2_DAO_ACS)
+- [AS-Incremento1](https://github.com/Dinisoliv/AS_ReparaJa_Incremento1)
 
 ## 📌 Outras UCs:
 - [AED](https://github.com/Dinisoliv/LECI/tree/main/2Ano/AED) - Primeiro projeto e código da primeira metade das aulas práticas em C
