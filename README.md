@@ -18,9 +18,12 @@ Licenciatura em Engenharia de Computadores e Informática
 - [AED-2](https://github.com/Dinisoliv/AED_Projeto2_DAO_ACS)
 - [AS-Incremento1](https://github.com/Dinisoliv/AS_ReparaJa_Incremento1)
 
-## 📌 Outras UCs:
+## 📌 Also good:
 - [AED](https://github.com/Dinisoliv/LECI/tree/main/2Ano/AED) - Primeiro projeto e código da primeira metade das aulas práticas em C
 - [CT](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/2Ano/CT) - Trabalhos das Competências Transferíveis de IO(CT-II), TCA(CT-I) e DT(CT-I)
+- [RC-II](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/2Ano/RC-II) - Teste TP 2024/25
+
+## 📌 Others UCs:
 - [FP](https://github.com/Dinisoliv/LECI/tree/main/1Ano/FP) - Código para preparação de exames e código dos projetos em Python
 - [IEI](https://github.com/Dinisoliv/LECI/tree/main/1Ano/IEI) - Projetos (ver apenas 2º - HTML, CSS e JavaScript)
 - [ISD](https://github.com/Dinisoliv/LECI/tree/main/1Ano/ISD/Pratica) - Alguns ficheiros .bdf das aulas P
