@@ -26,7 +26,7 @@ Licenciatura em Engenharia de Computadores e Informática
 - [AED](https://github.com/Dinisoliv/LECI/tree/main/2Ano/AED) - Primeiro projeto e código da primeira metade das aulas práticas em C
 - [CT](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/2Ano/CT) - Trabalhos das Competências Transferíveis de IO(CT-II), TCA(CT-I) e DT(CT-I)
 - [RC-II](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/2Ano/RC-II) - Teste TP 2024/25 e Teste Treino (3 e 4) P com respostas
-- [DC]((https://github.com/Dinisoliv/LECI_uaveiro/tree/main/3Ano/DC)) - IoT em C: microcontroladores ESP32, sensores e comunicação
+- [DC](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/3Ano/DC) - IoT em C: microcontroladores ESP32, sensores e comunicação
 - [MPECI](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/3Ano/MPECI) - MATLAB: probabilidade, estatística e modelos estocásticos
 
 ## 📌 Others UCs:
