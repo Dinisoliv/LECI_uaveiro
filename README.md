@@ -13,10 +13,11 @@ Licenciatura em Engenharia de Computadores e Informática
 - [AC-II](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/2Ano/AC-II) - Aulas práticas e exercícios de preparação para Testes P em código Assembly e C
 - [AS](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/2Ano/AS) - Portfólio da Componente Prática (Resolução de Guiões + Projeto)
 
-## 📌 Projetos (noutros repositórios):
-- [LSD](https://github.com/Dinisoliv/Projeto_Final_LSD)
-- [AED-2](https://github.com/Dinisoliv/AED_Projeto2_DAO_ACS)
-- [AS-Incremento1](https://github.com/Dinisoliv/AS_ReparaJa_Incremento1)
+## 📌 Repositórios associados:
+- [LSD](https://github.com/Dinisoliv/Projeto_Final_LSD) - Projeto final
+- [AED-2](https://github.com/Dinisoliv/AED_Projeto2_DAO_ACS) - Projeto de compressão de imagem 
+- [AS-Incremento1](https://github.com/Dinisoliv/AS_ReparaJa_Incremento1) - Incremento 1 AS
+- [BD](https://github.com/Dinisoliv/Pratica_BD) - Aulas e Projeto de BD
 
 ## 📌 Also good:
 - [AED](https://github.com/Dinisoliv/LECI/tree/main/2Ano/AED) - Primeiro projeto e código da primeira metade das aulas práticas em C
