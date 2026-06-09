@@ -1,0 +1,44 @@
+PortProxy Configuration - PowerShell (Administrator)
+
+$hostIP = "192.168.2.100"
+$wslIP  = "172.28.220.233"
+
+# Forward port 1883 (plain MQTT)
+netsh interface portproxy add v4tov4 listenaddress=$hostIP listenport=1883 connectaddress=$wslIP connectport=1883
+
+# Forward port 8883 (MQTT over TLS)
+netsh interface portproxy add v4tov4 listenaddress=$hostIP listenport=8883 connectaddress=$wslIP connectport=8883
+
+-------------
+Firewall Rules - PowerShell (Administrator)
+
+New-NetFirewallRule -DisplayName "MQTT 1883" -Direction Inbound -LocalPort 1883 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "MQTT 8883" -Direction Inbound -LocalPort 8883 -Protocol TCP -Action Allow
+
+
+----------
+Starting mosquitto on foreground - WSL
+
+sudo mosquitto -c /etc/mosquitto/mosquitto.conf -v
+
+Stop background
+
+sudo systemctl stop mosquitto
+
+
+----------
+Clean
+
+netsh interface portproxy delete v4tov4 listenaddress=0.0.0.0 listenport=1883
+netsh interface portproxy delete v4tov4 listenaddress=0.0.0.0 listenport=8883
+
+Remove-NetFirewallRule -DisplayName "Mosquitto1883"
+Remove-NetFirewallRule -DisplayName "Mosquitto8883"
+
+-------
+Stop
+
+sudo pkill mosquitto
+
+sudo systemctl stop mosquitto
+sudo systemctl status mosquitto   # check it’s stopped
