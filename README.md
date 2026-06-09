@@ -12,7 +12,7 @@ Licenciatura em Engenharia de Computadores e Informática
 - [RC-I](https://github.com/Dinisoliv/LECI/tree/main/2Ano/RC-I) - Desenvolvimento do projeto, sockets em Python e algumas resposta de guiões
 - [AC-II](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/2Ano/AC-II) - Aulas práticas e exercícios de preparação para Testes P em código Assembly e C
 - [AS](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/2Ano/AS) - Portfólio da Componente Prática (Resolução de Guiões + Projeto)
-- [IAA]([LINK_PLACEHOLDER](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/3Ano/IAA)) - Pipeline de ML completo: pré-processamento, modelos preditivos e deploy em cloud
+- [IAA]([LINK_PLACEHOLDER](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/3Ano/IAA) - Pipeline de ML completo: pré-processamento, modelos preditivos e deploy em cloud
 - [PECI](https://rafa2025.github.io/Site_PECI/) - Projeto integrador: relatório, poster e demonstração
 
 
@@ -26,7 +26,7 @@ Licenciatura em Engenharia de Computadores e Informática
 - [AED](https://github.com/Dinisoliv/LECI/tree/main/2Ano/AED) - Primeiro projeto e código da primeira metade das aulas práticas em C
 - [CT](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/2Ano/CT) - Trabalhos das Competências Transferíveis de IO(CT-II), TCA(CT-I) e DT(CT-I)
 - [RC-II](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/2Ano/RC-II) - Teste TP 2024/25 e Teste Treino (3 e 4) P com respostas
-- [DC]([LINK_PLACEHOLDER](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/3Ano/DC)) - IoT em C: microcontroladores ESP32, sensores e comunicação
+- [DC]([LINK_PLACEHOLDER](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/3Ano/DC) - IoT em C: microcontroladores ESP32, sensores e comunicação
 - [MPECI](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/3Ano/MPECI) - MATLAB: probabilidade, estatística e modelos estocásticos
 
 ## 📌 Others UCs:
