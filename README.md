@@ -28,6 +28,7 @@ Licenciatura em Engenharia de Computadores e Informática
 - [RC-II](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/2Ano/RC-II) - Teste TP 2024/25 e Teste Treino (3 e 4) P com respostas
 - [DC](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/3Ano/DC) - IoT em C: microcontroladores ESP32, sensores e comunicação
 - [MPECI](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/3Ano/MPECI) - MATLAB: probabilidade, estatística e modelos estocásticos
+- [LFA](https://github.com/Dinisoliv/LECI_uaveiro/tree/main/3Ano/LFA) - ANLR4/Java - Interpertadores e Compiladores: análise lexica, sintática e semântica, e  geração de código
 
 ## 📌 Others UCs:
 - [FP](https://github.com/Dinisoliv/LECI/tree/main/1Ano/FP) - Código para preparação de exames e código dos projetos em Python
